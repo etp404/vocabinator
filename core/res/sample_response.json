@@ -1,0 +1,841 @@
+{
+  "result": "ok",
+  "tuc": [
+    {
+      "phrase": {
+        "text": "hello",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "greeting"
+        },
+        {
+          "language": "en",
+          "text": "Expression of greeting used by two or more people who meet each other."
+        },
+        {
+          "language": "fr",
+          "text": "Expression de salutation utilis&eacute;e entre deux personnes ou plus qui se rencontrent."
+        },
+        {
+          "language": "en",
+          "text": "greeting"
+        }
+      ],
+      "meaningId": 8235492205179939000,
+      "authors": [
+        14
+      ]
+    },
+    {
+      "phrase": {
+        "text": "hi",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "friendly, informal greeting"
+        },
+        {
+          "language": "en",
+          "text": "Expression of greeting used by two or more people who meet each other."
+        },
+        {
+          "language": "fr",
+          "text": "Expression de salutation utilis&eacute;e entre deux personnes ou plus qui se rencontrent."
+        },
+        {
+          "language": "en",
+          "text": "friendly, informal greeting"
+        }
+      ],
+      "meaningId": 6943776299015516000,
+      "authors": [
+        14
+      ]
+    },
+    {
+      "phrase": {
+        "text": "greeting",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "acknowledgement of a persons presence or arrival"
+        },
+        {
+          "language": "en",
+          "text": "A conventional phrase used to start a conversation or otherwise to acknowledge a person&#39;s arrival or presence."
+        },
+        {
+          "language": "fr",
+          "text": "Expression conventionnelle utilis&eacute;e pour commencer une conversation, ou pour accueillir une personne pr&eacute;sente ou qui vient d&rsquo;arriver."
+        },
+        {
+          "language": "en",
+          "text": "acknowledgement of a persons presence or arrival"
+        }
+      ],
+      "meaningId": 8664574942566936000,
+      "authors": [
+        2
+      ]
+    },
+    {
+      "phrase": {
+        "text": "salvation",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "The act of delivering from sin or saving from evil."
+        },
+        {
+          "language": "fr",
+          "text": "Action de se d&eacute;livrer du p&eacute;cher ou de se sauver du mal."
+        },
+        {
+          "language": "en",
+          "text": "The state of having been saved (from hell)."
+        },
+        {
+          "language": "fr",
+          "text": "L&#39;&eacute;tat d&#39;avoir &eacute;t&eacute; sauv&eacute; (de l&#39;enfer)."
+        },
+        {
+          "language": "en",
+          "text": "the process of being saved (religion)"
+        }
+      ],
+      "meaningId": -8075772524863036000,
+      "authors": [
+        69425
+      ]
+    },
+    {
+      "phrase": {
+        "text": "bye",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "short for goodbye"
+        },
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        },
+        {
+          "language": "en",
+          "text": "short for goodbye"
+        }
+      ],
+      "meaningId": -3911014826596415000,
+      "authors": [
+        70197
+      ]
+    },
+    {
+      "phrase": {
+        "text": "salute",
+        "language": "en"
+      },
+      "meaningId": 5859949275847105000,
+      "authors": [
+        62617
+      ]
+    },
+    {
+      "phrase": {
+        "text": "bye-bye",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "goodbye"
+        },
+        {
+          "language": "en",
+          "text": "goodbye"
+        }
+      ],
+      "meaningId": -488203234543711940,
+      "authors": [
+        70195
+      ]
+    },
+    {
+      "phrase": {
+        "text": "cheerio",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        },
+        {
+          "language": "en",
+          "text": "exclamation used when greeting as well as when parting"
+        }
+      ],
+      "meaningId": 3214552112663456000,
+      "authors": [
+        70195
+      ]
+    },
+    {
+      "phrase": {
+        "text": "farewell",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        },
+        {
+          "language": "en",
+          "text": "An interjection of parting."
+        },
+        {
+          "language": "fr",
+          "text": "Interjection de d&eacute;part."
+        }
+      ],
+      "meaningId": -1974828452771679700,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "have a nice day",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "goodbye"
+        },
+        {
+          "language": "en",
+          "text": "goodbye"
+        }
+      ],
+      "meaningId": -4174096173818604500,
+      "authors": [
+        70195
+      ]
+    },
+    {
+      "phrase": {
+        "text": "valediction",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "word or phrase upon leaving"
+        },
+        {
+          "language": "en",
+          "text": "word or phrase upon leaving"
+        }
+      ],
+      "meaningId": -3330474827962969000,
+      "authors": [
+        70195
+      ]
+    },
+    {
+      "phrase": {
+        "text": "welfare",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "fr",
+          "text": "Conservation ou r&eacute;tablissement d&#39;un &eacute;tat heureux ou convenable"
+        }
+      ],
+      "meaningId": 3347827326360885000,
+      "authors": [
+        70197
+      ]
+    },
+    {
+      "phrase": {
+        "text": "adieu",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        }
+      ],
+      "meaningId": -1437379065890101500,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "cheers",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "informal: goodbye"
+        }
+      ],
+      "meaningId": 4348772026571012000,
+      "authors": [
+        70195
+      ]
+    },
+    {
+      "phrase": {
+        "text": "good day",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        }
+      ],
+      "meaningId": 5775385911196170000,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "good-bye",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "An interjection of parting."
+        },
+        {
+          "language": "fr",
+          "text": "Interjection de d&eacute;part."
+        }
+      ],
+      "meaningId": 4422102334748776400,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "goodbye",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "A parting statement; used when one or more people in a situation, dialogue or location are leaving, while others remain."
+        },
+        {
+          "language": "fr",
+          "text": "Une formulation de d&eacute;part; utilis&eacute;e lorsqu&#39;une ou plusieurs personnes dans une situation donn&eacute;e, dialogue ou lieu, s&#39;en vont alors que d&#39;autres restent."
+        }
+      ],
+      "meaningId": 9214976028216166000,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "hey",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "Expression of greeting used by two or more people who meet each other."
+        },
+        {
+          "language": "fr",
+          "text": "Expression de salutation utilis&eacute;e entre deux personnes ou plus qui se rencontrent."
+        }
+      ],
+      "meaningId": -3273162646396664300,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "howdy",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "Expression of greeting used by two or more people who meet each other."
+        },
+        {
+          "language": "fr",
+          "text": "Expression de salutation utilis&eacute;e entre deux personnes ou plus qui se rencontrent."
+        }
+      ],
+      "meaningId": 6447601525728512000,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "redemption",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "The act of delivering from sin or saving from evil."
+        },
+        {
+          "language": "fr",
+          "text": "Action de se d&eacute;livrer du p&eacute;cher ou de se sauver du mal."
+        }
+      ],
+      "meaningId": 1554778471977186800,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "so long",
+        "language": "en"
+      },
+      "meanings": [
+        {
+          "language": "en",
+          "text": "Expression of greeting used by two or more people who meet each other."
+        },
+        {
+          "language": "fr",
+          "text": "Expression de salutation utilis&eacute;e entre deux personnes ou plus qui se rencontrent."
+        }
+      ],
+      "meaningId": -3836414069576215000,
+      "authors": [
+        60172
+      ]
+    },
+    {
+      "phrase": {
+        "text": "bow",
+        "language": "en"
+      },
+      "meaningId": -5356282740292052000,
+      "authors": [
+        6
+      ]
+    },
+    {
+      "phrase": {
+        "text": "compliments",
+        "language": "en"
+      },
+      "meaningId": 2991940539573126700,
+      "authors": [
+        2700
+      ]
+    },
+    {
+      "phrase": {
+        "text": "greetings",
+        "language": "en"
+      },
+      "meaningId": -8124643725312270000,
+      "authors": [
+        2700
+      ]
+    },
+    {
+      "phrase": {
+        "text": "nod",
+        "language": "en"
+      },
+      "meaningId": 8434393302275388000,
+      "authors": [
+        25018
+      ]
+    },
+    {
+      "phrase": {
+        "text": "recovery",
+        "language": "en"
+      },
+      "meaningId": -5686572190023840000,
+      "authors": [
+        2893
+      ]
+    },
+    {
+      "phrase": {
+        "text": "regards",
+        "language": "en"
+      },
+      "meaningId": 837928132516442500,
+      "authors": [
+        2700
+      ]
+    },
+    {
+      "phrase": {
+        "text": "révérence",
+        "language": "en"
+      },
+      "meaningId": 5529047887074378000,
+      "authors": [
+        6
+      ]
+    },
+    {
+      "phrase": {
+        "text": "salutation",
+        "language": "en"
+      },
+      "meaningId": 7571267726957891000,
+      "authors": [
+        2708
+      ]
+    },
+    {
+      "phrase": {
+        "text": "salvage",
+        "language": "en"
+      },
+      "meaningId": -1870959340125859600,
+      "authors": [
+        2893
+      ]
+    },
+    {
+      "phrase": {
+        "text": "saving",
+        "language": "en"
+      },
+      "meaningId": 1354444049542143000,
+      "authors": [
+        20
+      ]
+    },
+    {
+      "phrase": {
+        "text": "yo",
+        "language": "en"
+      },
+      "meaningId": -2014736744255839000,
+      "authors": [
+        25115
+      ]
+    },
+    {
+      "meanings": [
+        {
+          "language": "fr",
+          "text": "(informal) hi, hello"
+        },
+        {
+          "language": "fr",
+          "text": "(informal) bye, goodbye"
+        },
+        {
+          "language": "fr",
+          "text": "wave (of the hand)"
+        },
+        {
+          "language": "fr",
+          "text": "bow (inclination of the body)"
+        },
+        {
+          "language": "fr",
+          "text": "(religion) salvation"
+        }
+      ],
+      "meaningId": -4793146992201011000,
+      "authors": [
+        1
+      ]
+    }
+  ],
+  "phrase": "salut",
+  "examples": [
+    {
+      "author": 8008,
+      "first": "1 Co 10, 11). Compte tenu de la situation humaine qui précède le <strong class=\"keyword\">salut</strong> instauré par le Christ, les livres de l’Ancien Testament permettent à tous de connaître qui est Dieu et qui est l’homme, non moins que la manière dont Dieu dans sa justice et sa miséricorde agit envers les hommes.",
+      "second": "That is why the Church from the very beginning accepted as her own that very ancient Greek translation; of the Old Testament which is called the septuagint; and she has always given <strong class=\"keyword\">a</strong> place of honor to other Eastern translations and Latin ones especially the Latin translation known as the vulgate."
+    },
+    {
+      "author": 31,
+      "first": "Commençons par les <strong class=\"keyword\">salutations</strong> au soleil",
+      "second": "Let' s start with some sun <strong class=\"keyword\">salutations</strong>"
+    },
+    {
+      "author": 8008,
+      "first": "1001 cartes postales est un <strong class=\"keyword\">salut</strong> très belle carte des sites à l'étranger, en fournissant une musique dynamique, animation, vidéo, des formulaires de cartes de vœux en ligne.",
+      "second": "1001 Postcards is <strong class=\"keyword\">a</strong> very <strong class=\"keyword\">nice greeting</strong> card sites abroad, providing <strong class=\"keyword\">a</strong> dynamic music, animation, video, forms of online <strong class=\"keyword\">greeting</strong> cards."
+    },
+    {
+      "author": 8005,
+      "first": "Journée européenne des langues vendredi 26 septembre 2008 Exemples de la pratique 2007 Franchir les frontières en apprenant les langues L'exposition présente la diversité linguistique de l'Europe (p.ex. les differentes declarations d'amour, les <strong class=\"keyword\">salutations</strong> etc.). On présente également les affiches preparées par les élèves qui font la promotion de la JEL.",
+      "second": "European <strong class=\"keyword\">Day</strong> of languages 26 September 2008 Examples of practice 2007 Franchir les frontières en apprenant les langues L'exposition présente la diversité linguistique de l'Europe (p.ex. les differentes declarations d'amour, les <strong class=\"keyword\">salutations</strong> etc.). On présente également les affiches preparées par les élèves qui font la promotion de la JEL."
+    },
+    {
+      "author": 8005,
+      "first": "Le <strong class=\"keyword\">salut</strong> de la main Traditionnellement, les membres des Forces canadiennes se saluent la main ouverte uniquement lorsqu’ils portent l’uniforme et un couvre-chef.",
+      "second": "The hand <strong class=\"keyword\">salute</strong> Canadian Forces members traditionally <strong class=\"keyword\">salute</strong> with the open hand only when in uniform and wearing headgear."
+    },
+    {
+      "author": 31,
+      "first": "On ne te laissera pas rentre à moins que tu ne fasses le <strong class=\"keyword\">salut</strong> correctement",
+      "second": "We' re not letting you pass trough until you do the <strong class=\"keyword\">greeting</strong> properly"
+    },
+    {
+      "author": 8008,
+      "first": "Sims je vais donc apprendre de nouvelles coutumes locales y compris les <strong class=\"keyword\">salutations</strong>, danses et plus à la maison et de montrer à leurs amis.",
+      "second": "Sims <strong class=\"keyword\">so</strong> I will learn new customs including local <strong class=\"keyword\">greetings</strong>, dances and more to take home and show their friends."
+    },
+    {
+      "author": 8008,
+      "first": "Mais dans Son amour, Dieu mit sur pied Son plan de <strong class=\"keyword\">salut</strong> en Jésus-Christ, afin qu’ils puissent, un jour, revenir au paradis.",
+      "second": "But, in <strong class=\"keyword\">His</strong> infinite love, God set up <strong class=\"keyword\">His</strong> plan of <strong class=\"keyword\">salvation</strong> in Jesus Christ, <strong class=\"keyword\">so</strong> that they might, one <strong class=\"keyword\">day</strong>, return to paradise."
+    },
+    {
+      "author": 8005,
+      "first": "Je profite de l'occasion pour vous transmettre les <strong class=\"keyword\">salutations</strong> de ma collègue l'honorable Lucienne Robillard, ministre de l'Industrie et ministre responsable de Développement économique Canada qui, malheureusement, ne pouvait être ici aujourd'hui.",
+      "second": "I would first like to take this opportunity to send you <strong class=\"keyword\">greetings</strong> from my colleague the Honourable Lucienne Robillard, Minister of Industry and Minister responsible for the Economic Development Agency of Canada, who unfortunately could not be here today."
+    },
+    {
+      "author": 8008,
+      "first": "<strong class=\"keyword\">Salut</strong>, je pense que ce produit pourrait t'intéresser.",
+      "second": "<strong class=\"keyword\">Hi</strong>, I think this product may interest you."
+    },
+    {
+      "author": 8008,
+      "first": "6 Et vous avez vu aussi que mon frère vous a prouvé, par beaucoup d'exemples, que la a parole est dans le Christ pour le <strong class=\"keyword\">salut</strong>.",
+      "second": "6 And ye also beheld that my brother has proved unto you, in many instances, that the <strong class=\"keyword\">a</strong> word is in Christ unto <strong class=\"keyword\">salvation</strong>."
+    },
+    {
+      "author": 31,
+      "first": "<strong class=\"keyword\">Salut</strong> Parker, quoi de neuf?",
+      "second": "<strong class=\"keyword\">Hey</strong>, Parker, what' s up?"
+    },
+    {
+      "author": 8008,
+      "first": "<strong class=\"keyword\">Salut</strong> Tania ... les photos et les résultats que nous publions sur le blog envoie Jo-Ann Ferre ... en général lorsque des événements personnes, Jo-Ann prend aussi des photos ... mais pas dans toutes les compétitions il ya des événements gens de chevaux ... de toute façon, nous tiendrons compte de votre suggestion pour l'avenir ...",
+      "second": "<strong class=\"keyword\">Hi</strong> Tania ... the photos and results that we publish on the blog sends Jo-Ann Ferre ... usually when people events, Jo-Ann also takes pictures ... but not in all competitions there are people horse events ... anyway, we'll consider your suggestion for the future ..."
+    },
+    {
+      "author": 31,
+      "first": "Hamidullah envoie ses <strong class=\"keyword\">salutations</strong>",
+      "second": "And Hamidullah sends <strong class=\"keyword\">his</strong> salaams"
+    },
+    {
+      "author": 8008,
+      "first": "renforcés par l'amour de Dieu et du Divin Rédempteur, de qui tous reçoivent le <strong class=\"keyword\">salut</strong> \" pour l'édification du corps du Christ, jusqu'à ce que nous parvenions tous ensemble à l'unité de la foi, à la pleine connaissance du Fils de Dieu, à l'état d'homme parfait, selon la mesure de la pleine grandeur du Christ \" (cf.",
+      "second": "52. But there is yet another error no less pernicious to the well-being of the nations and to the prosperity of that great human society which gathers together and embraces within its confines all races."
+    },
+    {
+      "author": 31,
+      "first": "\" <strong class=\"keyword\">Salut</strong>, Sarah Kohri",
+      "second": "\" Oh, <strong class=\"keyword\">hi</strong>, Sarah Kohri. \""
+    },
+    {
+      "author": 31,
+      "first": "Ce pays s' oppose à notre <strong class=\"keyword\">salut</strong>",
+      "second": "This republic is an obstacle to our deliverance"
+    },
+    {
+      "author": 8008,
+      "first": "<strong class=\"keyword\">Salut</strong> a tous j ai 21 ans j adore renaud j ai meme faitr le tatouage de la pochette de boucan d enfer sur l epaule j ai une horloges et tout j adore bisous renaud si tu vois ce message!!!!!!!!!!!!",
+      "second": "C'est triste à dire mais ... La société elle t'a eu, Renaud ! Retournez plutôt écouter ses anciens albums ..."
+    },
+    {
+      "author": 31,
+      "first": "<strong class=\"keyword\">Salut</strong> les gars, quoi de neuf?",
+      "second": "<strong class=\"keyword\">Hey</strong>, guys, what' s up?"
+    },
+    {
+      "author": 8008,
+      "first": "Aussi, je vous prie de bien vouloir lui transmettre nos plus respectueuses <strong class=\"keyword\">salutations</strong>.",
+      "second": "Please give our best <strong class=\"keyword\">regards</strong> to Professor Schambeck."
+    },
+    {
+      "author": 8008,
+      "first": "Le cinquième réside dans l’attitude de celui qui déteste une partie du message du Prophète (bénédiction et <strong class=\"keyword\">salut</strong> soient sur lui), même s’il l’applique. À ce propos le Très Haut dit : « C' est parce qu' ils ont de la répulsion pour ce qu' Allah a fait descendre.",
+      "second": "That includes praying to the dead, seeking their help, making vows and offering sacrifices to them or to the jinn or to the grave."
+    },
+    {
+      "author": 31,
+      "first": "<strong class=\"keyword\">Salut</strong>, Paula",
+      "second": "<strong class=\"keyword\">Hello</strong>, Paula"
+    },
+    {
+      "author": 31,
+      "first": "<strong class=\"keyword\">Salut</strong> maman, <strong class=\"keyword\">salut</strong> papa",
+      "second": "<strong class=\"keyword\">Hey</strong>, Mom.Hey, Dad"
+    },
+    {
+      "author": 8005,
+      "first": "Maman pointe vers mes grandsparents, qui, en nous apercevant, commencent à chanter, élevant les bras dans la <strong class=\"keyword\">salutation</strong> traditionnelle.",
+      "second": "Suddenly there it is, Langley dock, awash with people."
+    },
+    {
+      "author": 8008,
+      "first": "Nous prolongeons nos <strong class=\"keyword\">salutations</strong> plus chaudes et vous invitons à rester au Hotel Richmond a.s.",
+      "second": "We extend our warmest <strong class=\"keyword\">greetings</strong> and invite you to stay at Hotel Richmond a.s. - Certovka."
+    }
+  ],
+  "from": "fr",
+  "dest": "en",
+  "authors": {
+    "1": {
+      "U": "http://en.wiktionary.org",
+      "id": 1,
+      "N": "en.wiktionary.org",
+      "url": "https://glosbe.com/source/1"
+    },
+    "2": {
+      "U": "http://pl.wiktionary.org",
+      "id": 2,
+      "N": "pl.wiktionary.org",
+      "url": "https://glosbe.com/source/2"
+    },
+    "6": {
+      "U": "http://de.wiktionary.org",
+      "id": 6,
+      "N": "de.wiktionary.org",
+      "url": "https://glosbe.com/source/6"
+    },
+    "14": {
+      "U": "http://sv.wiktionary.org",
+      "id": 14,
+      "N": "sv.wiktionary.org",
+      "url": "https://glosbe.com/source/14"
+    },
+    "20": {
+      "U": "http://www.slowniki.org.pl/",
+      "id": 20,
+      "N": "Jerzy Kazojc",
+      "url": "https://glosbe.com/source/20"
+    },
+    "31": {
+      "U": "http://www.opensubtitles.org/",
+      "id": 31,
+      "N": "opensubtitles2",
+      "url": "https://glosbe.com/source/31"
+    },
+    "2700": {
+      "U": "http://dumps.wikimedia.org/ruwiktionary/latest/ruwiktionary-latest-pages-articles.xml.bz2",
+      "id": 2700,
+      "N": "Vikislovar",
+      "url": "https://glosbe.com/source/2700"
+    },
+    "2708": {
+      "U": "http://purl.org/net/voko/revo/",
+      "id": 2708,
+      "N": "Reta-Vortaro",
+      "url": "https://glosbe.com/source/2708"
+    },
+    "2893": {
+      "U": "http://sourceforge.net/projects/freedict/files/",
+      "id": 2893,
+      "N": "English-French",
+      "url": "https://glosbe.com/source/2893"
+    },
+    "8005": {
+      "U": "http://cs.jhu.edu/~ccb/",
+      "id": 8005,
+      "N": "Giga-fren",
+      "url": "https://glosbe.com/source/8005"
+    },
+    "8008": {
+      "U": "http://www.statmt.org/wmt13/translation-task.html",
+      "id": 8008,
+      "N": "Common crawl",
+      "url": "https://glosbe.com/source/8008"
+    },
+    "25018": {
+      "U": "http://glosbe.com",
+      "id": 25018,
+      "N": "Administratorus",
+      "url": "https://glosbe.com/source/25018"
+    },
+    "25115": {
+      "U": "",
+      "id": 25115,
+      "N": "Administratorus",
+      "url": "https://glosbe.com/source/25115"
+    },
+    "60172": {
+      "U": "http://www.omegawiki.org/",
+      "id": 60172,
+      "N": "omegawiki",
+      "url": "https://glosbe.com/source/60172"
+    },
+    "62617": {
+      "U": "",
+      "id": 62617,
+      "N": "jrigdon",
+      "url": "https://glosbe.com/source/62617"
+    },
+    "69425": {
+      "U": "",
+      "id": 69425,
+      "N": "plwiktionary.org",
+      "url": "https://glosbe.com/source/69425"
+    },
+    "70195": {
+      "U": "",
+      "id": 70195,
+      "N": "Administratorus",
+      "url": "https://glosbe.com/source/70195"
+    },
+    "70197": {
+      "U": "",
+      "id": 70197,
+      "N": "Administratorus",
+      "url": "https://glosbe.com/source/70197"
+    }
+  }
+}
