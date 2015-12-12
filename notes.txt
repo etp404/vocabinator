@@ -109,7 +109,7 @@ https://glosbe.com/gapi/translate?from=fra&dest=eng&format=json&phrase=ainsi
     },
     {
       "phrase": {
-        "text": "thereby",
+            "text": "thereby",
         "language": "en"
       },
       "meanings": [

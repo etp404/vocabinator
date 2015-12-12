@@ -60,8 +60,9 @@ public class QueryPagePresenterTest {
         public String calledWith;
 
         @Override
-        public void getVocabItem(String some_word) {
+        public String getVocabItem(String some_word) {
             calledWith = some_word;
+            return null;
         }
     }
 }
