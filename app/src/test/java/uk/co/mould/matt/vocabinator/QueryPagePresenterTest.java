@@ -21,35 +21,34 @@ public class QueryPagePresenterTest {
     }
 
     private class QueryPagePresenter {
-        public QueryPagePresenter(FakeQueryView fakeQueryView, final FakeVocabProvider fakeVocabProvider) {
-            fakeQueryView.addQueryButtonListener(new FakeQueryView.QueryButtonListener() {
+        public QueryPagePresenter(QueryView queryView, final VocabProvider vocabProvider) {
+            queryView.addQueryButtonListener(new QueryView.QueryButtonListener() {
                 @Override
                 public void pressed() {
-                    fakeVocabProvider.getVocabItem("some_word");
+                    vocabProvider.getVocabItem("some_word");
                 }
             });
         }
     }
 
-    private static class FakeQueryView {
+    private static class FakeQueryView implements QueryView {
         private QueryButtonListener queryButtonListener;
 
         public void queryButtonPressed() {
             queryButtonListener.pressed();
         }
 
+        @Override
         public void addQueryButtonListener(QueryButtonListener queryButtonListener) {
             this.queryButtonListener = queryButtonListener;
         }
 
-        public interface QueryButtonListener {
-            void pressed();
-        }
     }
 
-    private class FakeVocabProvider {
+    private class FakeVocabProvider implements VocabProvider {
         public String calledWith;
 
+        @Override
         public void getVocabItem(String some_word) {
             calledWith = some_word;
         }
