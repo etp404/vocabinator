@@ -14,18 +14,20 @@ public class QueryPagePresenterTest {
         new QueryPagePresenter(
                 fakeQueryView,
                 fakeVocabProvider
-                );
+        );
 
+        String some_word = "some_word";
+        fakeQueryView.setTextBoxString(some_word);
         fakeQueryView.queryButtonPressed();
-        assertThat(fakeVocabProvider.calledWith, is("some_word"));
+        assertThat(fakeVocabProvider.calledWith, is(some_word));
     }
 
     private class QueryPagePresenter {
-        public QueryPagePresenter(QueryView queryView, final VocabProvider vocabProvider) {
+        public QueryPagePresenter(final QueryView queryView, final VocabProvider vocabProvider) {
             queryView.addQueryButtonListener(new QueryView.QueryButtonListener() {
                 @Override
                 public void pressed() {
-                    vocabProvider.getVocabItem("some_word");
+                    vocabProvider.getVocabItem(queryView.getTextBoxString());
                 }
             });
         }
@@ -33,6 +35,7 @@ public class QueryPagePresenterTest {
 
     private static class FakeQueryView implements QueryView {
         private QueryButtonListener queryButtonListener;
+        private String textBoxString;
 
         public void queryButtonPressed() {
             queryButtonListener.pressed();
@@ -43,6 +46,14 @@ public class QueryPagePresenterTest {
             this.queryButtonListener = queryButtonListener;
         }
 
+        public void setTextBoxString(String textBoxString) {
+            this.textBoxString = textBoxString;
+        }
+
+        @Override
+        public String getTextBoxString() {
+            return textBoxString;
+        }
     }
 
     private class FakeVocabProvider implements VocabProvider {
