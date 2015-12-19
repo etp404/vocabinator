@@ -11,7 +11,7 @@ public class GlosbeVocabProvider implements VocabProvider {
     }
 
     @Override
-    public String getVocabItem(String some_word) {
+    public String getVocabItem(String some_word, VocabCallback vocabCallback) {
         String response = responseGetter.getJsonForWord();
         response = response.replace(" ", "");
         Gson gson = new Gson();

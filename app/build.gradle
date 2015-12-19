@@ -25,3 +25,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':core')
 }
+
+task runAllTests(dependsOn: ['clean',
+                             'build',
+                             'connectedAndroidTest',
+                             ':core:test',
+                             ':app:connectedAndroidTest'])
+build.mustRunAfter 'clean'
+tasks.whenTaskAdded { task ->
+    if (task.name == 'connectedAndroidTest')
+        task.dependsOn build
+}

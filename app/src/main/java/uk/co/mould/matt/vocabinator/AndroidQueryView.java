@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import java.util.List;
+
 public class AndroidQueryView extends LinearLayout implements QueryView {
     private View queryButton;
     private EditText queryEntryBox;
@@ -42,5 +44,10 @@ public class AndroidQueryView extends LinearLayout implements QueryView {
     @Override
     public String getTextBoxString() {
         return queryEntryBox.getText().toString();
+    }
+
+    @Override
+    public void showResults(List<VocabItem> vocabItems) {
+
     }
 }

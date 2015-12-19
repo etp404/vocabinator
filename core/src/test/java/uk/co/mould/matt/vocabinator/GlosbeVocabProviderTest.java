@@ -9,9 +9,7 @@ public final class GlosbeVocabProviderTest {
 
     @Test
     public void testThatCanReturnArrayOfMeanings() {
-        assertEquals("so", new GlosbeVocabProvider(new StaticResponseGetter()).getVocabItem("some_word"));
+        assertEquals("so", new GlosbeVocabProvider(new StaticResponseGetter()).getVocabItem("some_word", null));
     }
-
-
 
 }

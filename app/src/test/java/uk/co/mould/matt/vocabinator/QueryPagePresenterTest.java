@@ -1,25 +1,47 @@
 package uk.co.mould.matt.vocabinator;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class QueryPagePresenterTest {
-    @Test
-    public void assertThatWhenTranslateIsPressed_CallIsMadeToTranslationGetter() throws Exception {
+    private List<VocabItem> vocabItems = new ArrayList<VocabItem>() {{
+        add(new VocabItem("a", "b", "c", "d"));
+        add(new VocabItem("e", "f", "g", "h"));
+    }};
+    private AutomaticallyRespondingVocabProvider automaticallyRespondingVocabProvider;
+    private String someWord;
+    private FakeQueryView fakeQueryView;
 
-        FakeVocabProvider fakeVocabProvider = new FakeVocabProvider();
-        FakeQueryView fakeQueryView = new FakeQueryView();
-        new QueryPagePresenter(
+    @Before
+    public void setup() {
+        automaticallyRespondingVocabProvider = new AutomaticallyRespondingVocabProvider(vocabItems);
+        fakeQueryView = new FakeQueryView();
+        new
+
+        QueryPagePresenter(
                 fakeQueryView,
-                fakeVocabProvider
-        );
+                automaticallyRespondingVocabProvider
+                );
 
-        String some_word = "some_word";
-        fakeQueryView.setTextBoxString(some_word);
+        someWord = "someWord";
+        fakeQueryView.setTextBoxString(someWord);
         fakeQueryView.queryButtonPressed();
-        assertThat(fakeVocabProvider.calledWith, is(some_word));
+    }
+
+    @Test
+    public void whenTranslateIsPressed_CallIsMadeToTranslationGetter() throws Exception {
+        assertThat(automaticallyRespondingVocabProvider.calledWith, is(someWord));
+    }
+
+    @Test
+    public void whenVocabProviderReturns_ViewIsToldToShowResults() {
+        assertEquals(vocabItems, fakeQueryView.toldToShow);
     }
 
     private class QueryPagePresenter {
@@ -27,7 +49,12 @@ public class QueryPagePresenterTest {
             queryView.addQueryButtonListener(new QueryView.QueryButtonListener() {
                 @Override
                 public void pressed() {
-                    vocabProvider.getVocabItem(queryView.getTextBoxString());
+                    vocabProvider.getVocabItem(queryView.getTextBoxString(), new VocabProvider.VocabCallback() {
+                        @Override
+                        public void success(List<VocabItem> vocabItems) {
+                            queryView.showResults(vocabItems);
+                        }
+                    });
                 }
             });
         }
@@ -36,6 +63,7 @@ public class QueryPagePresenterTest {
     private static class FakeQueryView implements QueryView {
         private QueryButtonListener queryButtonListener;
         private String textBoxString;
+        public List<VocabItem> toldToShow;
 
         public void queryButtonPressed() {
             queryButtonListener.pressed();
@@ -54,15 +82,27 @@ public class QueryPagePresenterTest {
         public String getTextBoxString() {
             return textBoxString;
         }
-    }
-
-    private class FakeVocabProvider implements VocabProvider {
-        public String calledWith;
 
         @Override
-        public String getVocabItem(String some_word) {
-            calledWith = some_word;
+        public void showResults(List<VocabItem> vocabItems) {
+            toldToShow = vocabItems;
+        }
+    }
+
+    private class AutomaticallyRespondingVocabProvider implements VocabProvider {
+        public String calledWith;
+        private List<VocabItem> vocabItems;
+
+        public AutomaticallyRespondingVocabProvider(List<VocabItem> vocabItems) {
+            this.vocabItems = vocabItems;
+        }
+
+        @Override
+        public String getVocabItem(String someWord, VocabCallback callback) {
+            calledWith = someWord;
+            callback.success(vocabItems);
             return null;
         }
     }
+
 }
