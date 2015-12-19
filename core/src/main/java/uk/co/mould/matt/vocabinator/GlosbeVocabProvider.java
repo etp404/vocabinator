@@ -9,25 +9,28 @@ public class GlosbeVocabProvider implements VocabProvider {
     private ResponseGetter responseGetter;
 
     public GlosbeVocabProvider(ResponseGetter responseGetter) {
-
         this.responseGetter = responseGetter;
     }
 
     @Override
-    public String getVocabItem(final String wordToBeTranslated, VocabCallback vocabCallback) {
-        String response = responseGetter.getJsonForWord();
-        Gson gson = new Gson();
-        GlosbeResponse glosbeResponse = gson.fromJson(response, GlosbeResponse.class);
+    public void getVocabItem(final String wordToBeTranslated, final VocabCallback vocabCallback) {
+        responseGetter.getJsonForWord(new ResponseGetter.ResponseGetterCallback() {
+            @Override
+            public void success(String result) {
+                Gson gson = new Gson();
+                GlosbeResponse glosbeResponse = gson.fromJson(result, GlosbeResponse.class);
 
-        List<VocabItem> vocabItems = new ArrayList<>();
-        for (TranslationItem translationItem : glosbeResponse.getTuc()) {
-            Phrase phrase = translationItem.getPhrase();
-            if (phrase.getLanguage().equals("en")) {
-                vocabItems.add(new VocabItem(phrase.getText(), wordToBeTranslated));
+                List<VocabItem> vocabItems = new ArrayList<>();
+                for (TranslationItem translationItem : glosbeResponse.getTuc()) {
+                    Phrase phrase = translationItem.getPhrase();
+                    if (phrase.getLanguage().equals("en")) {
+                        vocabItems.add(new VocabItem(phrase.getText(), wordToBeTranslated));
+                    }
+                }
+                vocabCallback.success(vocabItems);
             }
-        }
-        vocabCallback.success(vocabItems);
-        return null;
+        });
+
     }
 
     private class GlosbeResponse {

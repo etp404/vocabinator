@@ -82,10 +82,9 @@ public class QueryPagePresenterTest {
         }
 
         @Override
-        public String getVocabItem(String someWord, VocabCallback callback) {
+        public void getVocabItem(String someWord, VocabCallback callback) {
             calledWith = someWord;
             callback.success(vocabItems);
-            return null;
         }
     }
 

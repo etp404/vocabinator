@@ -1,8 +1,8 @@
 package uk.co.mould.matt.vocabinator;
 
 public class StaticResponseGetter implements ResponseGetter {
-    public String getJsonForWord() {
-        return "{" +
+    public void getJsonForWord(ResponseGetterCallback callback) {
+        callback.success("{" +
                 "  \"result\": \"ok\"," +
                 "  \"tuc\": [" +
                 "    {" +
@@ -213,6 +213,6 @@ public class StaticResponseGetter implements ResponseGetter {
                 "      \"url\": \"https://glosbe.com/source/70195\"" +
                 "    }" +
                 "  }" +
-                "}";
+                "}");
     }
 }
