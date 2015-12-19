@@ -1,10 +1,15 @@
 package uk.co.mould.matt.vocabinator;
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class AndroidQueryView extends LinearLayout implements QueryView {
     private View queryButton;
