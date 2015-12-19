@@ -4,6 +4,10 @@ import android.content.Context;
 import android.test.AndroidTestCase;
 import android.view.LayoutInflater;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class QueryViewTest extends AndroidTestCase {
 
@@ -29,6 +33,21 @@ public final class QueryViewTest extends AndroidTestCase {
         String text = "some text";
         ((EditText)queryView.findViewById(R.id.query_entry_box)).setText(text);
         assertEquals(text, queryView.getTextBoxString());
+    }
+
+    public void testThatCanShowList() {
+        final VocabItem vocabItem1 = new VocabItem("a", "b");
+        final VocabItem vocabItem2 = new VocabItem("c", "d");
+
+        List<VocabItem> vocabItems = new ArrayList<VocabItem>(){{
+            add(vocabItem1);
+            add(vocabItem2);
+        }};
+        queryView.showResults(vocabItems);
+
+        ListView resultsList = (ListView)queryView.findViewById(R.id.results_list);
+        assertEquals(vocabItem1, resultsList.getItemAtPosition(0));
+        assertEquals(vocabItem2, resultsList.getItemAtPosition(1));
     }
 
     private static class CapturingQueryButtonListener implements QueryView.QueryButtonListener {
