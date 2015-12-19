@@ -2,6 +2,9 @@ package uk.co.mould.matt.vocabinator;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GlosbeVocabProvider implements VocabProvider {
     private ResponseGetter responseGetter;
 
@@ -11,12 +14,20 @@ public class GlosbeVocabProvider implements VocabProvider {
     }
 
     @Override
-    public String getVocabItem(String some_word, VocabCallback vocabCallback) {
+    public String getVocabItem(final String wordToBeTranslated, VocabCallback vocabCallback) {
         String response = responseGetter.getJsonForWord();
-        response = response.replace(" ", "");
         Gson gson = new Gson();
         GlosbeResponse glosbeResponse = gson.fromJson(response, GlosbeResponse.class);
-        return glosbeResponse.getTuc()[0].getPhrase().getText();
+
+        List<VocabItem> vocabItems = new ArrayList<>();
+        for (TranslationItem translationItem : glosbeResponse.getTuc()) {
+            Phrase phrase = translationItem.getPhrase();
+            if (phrase.getLanguage().equals("en")) {
+                vocabItems.add(new VocabItem(phrase.getText(), wordToBeTranslated));
+            }
+        }
+        vocabCallback.success(vocabItems);
+        return null;
     }
 
     private class GlosbeResponse {
@@ -34,7 +45,7 @@ public class GlosbeVocabProvider implements VocabProvider {
 
     private class TranslationItem {
         private Phrase phrase;
-
+        private Meaning[] meanings;
         public Phrase getPhrase() {
             return phrase;
         }
@@ -42,9 +53,38 @@ public class GlosbeVocabProvider implements VocabProvider {
         public void setPhrase(Phrase phrase) {
             this.phrase = phrase;
         }
+
+        public Meaning[] getMeanings() {
+            return meanings;
+        }
+
+        public void setMeanings(Meaning[] meanings) {
+            this.meanings = meanings;
+        }
     }
 
     private class Phrase {
+        private String text;
+        private String language;
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public String getLanguage() {
+            return language;
+        }
+
+        public void setLanguage(String language) {
+            this.language = language;
+        }
+    }
+
+    private class Meaning {
         private String text;
         private String language;
 

@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 
 public class QueryPagePresenterTest {
     private List<VocabItem> vocabItems = new ArrayList<VocabItem>() {{
-        add(new VocabItem("a", "b", "c", "d"));
-        add(new VocabItem("e", "f", "g", "h"));
+        add(new VocabItem("a", "c"));
+        add(new VocabItem("e", "g"));
     }};
     private AutomaticallyRespondingVocabProvider automaticallyRespondingVocabProvider;
     private String someWord;
