@@ -1,7 +1,5 @@
 package uk.co.mould.matt.vocabinator;
 
-import android.os.AsyncTask;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,10 +11,9 @@ import java.net.URL;
 class HttpResponseGetter implements ResponseGetter {
     @Override
     public void getJsonForWord(final ResponseGetterCallback responseGetterCallback) {
-        AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>(){
-
+        Thread thread = new Thread(new Runnable() {
             @Override
-            protected Void doInBackground(Void... params) {
+            public void run() {
                 String result = "";
 
                 URL url = null;
@@ -37,11 +34,11 @@ class HttpResponseGetter implements ResponseGetter {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
                 responseGetterCallback.success(result);
-                return null;
             }
-        };
-        asyncTask.execute();
+        });
+        thread.start();
     }
 
 }

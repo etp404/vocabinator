@@ -6,9 +6,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -55,34 +53,42 @@ public class AndroidQueryView extends LinearLayout implements QueryView {
     }
 
     @Override
-    public void showResults(List<VocabItem> vocabItems) {
-        ListView resultsList = (ListView)findViewById(R.id.results_list);
-        resultsList.setAdapter(new VocabItemsViewListadapter(getContext(), R.layout.vocab_item, vocabItems));
+    public void showResults(final List<VocabItem> vocabItems) {
+        Runnable runnable = new Runnable() {
+
+            @Override
+            public void run() {
+                ListView resultsList = (ListView) findViewById(R.id.results_list);
+                resultsList.setAdapter(new VocabItemsViewListAdapter(getContext(),R.layout.vocab_item,vocabItems));
+            }
+
+        };
+        post(runnable);
     }
 
-    private static class VocabItemsViewListadapter extends ArrayAdapter<VocabItem> {
+    private static class VocabItemsViewListAdapter extends ArrayAdapter<VocabItem> {
 
-        public VocabItemsViewListadapter(Context context, int resource) {
+        public VocabItemsViewListAdapter(Context context, int resource) {
             super(context, resource);
         }
 
-        public VocabItemsViewListadapter(Context context, int resource, int textViewResourceId) {
+        public VocabItemsViewListAdapter(Context context, int resource, int textViewResourceId) {
             super(context, resource, textViewResourceId);
         }
 
-        public VocabItemsViewListadapter(Context context, int resource, VocabItem[] objects) {
+        public VocabItemsViewListAdapter(Context context, int resource, VocabItem[] objects) {
             super(context, resource, objects);
         }
 
-        public VocabItemsViewListadapter(Context context, int resource, int textViewResourceId, VocabItem[] objects) {
+        public VocabItemsViewListAdapter(Context context, int resource, int textViewResourceId, VocabItem[] objects) {
             super(context, resource, textViewResourceId, objects);
         }
 
-        public VocabItemsViewListadapter(Context context, int resource, List<VocabItem> objects) {
+        public VocabItemsViewListAdapter(Context context, int resource, List<VocabItem> objects) {
             super(context, resource, objects);
         }
 
-        public VocabItemsViewListadapter(Context context, int resource, int textViewResourceId, List<VocabItem> objects) {
+        public VocabItemsViewListAdapter(Context context, int resource, int textViewResourceId, List<VocabItem> objects) {
             super(context, resource, textViewResourceId, objects);
         }
 
