@@ -23,7 +23,7 @@ public class GlosbeVocabProvider implements VocabProvider {
                 List<VocabItem> vocabItems = new ArrayList<>();
                 for (TranslationItem translationItem : glosbeResponse.getTuc()) {
                     Phrase phrase = translationItem.getPhrase();
-                    if (phrase.getLanguage().equals("en")) {
+                    if (phrase!=null && phrase.getLanguage().equals("en")) {
                         vocabItems.add(new VocabItem(phrase.getText(), wordToBeTranslated));
                     }
                 }

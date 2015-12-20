@@ -23,7 +23,7 @@ public final class GlosbeVocabProviderTest {
             add(new VocabItem("thereby", frenchWord));
             add(new VocabItem("in this way", frenchWord));
         }};
-        new GlosbeVocabProvider(new StaticResponseGetter()).getVocabItem(frenchWord, vocabCallback);
+        new GlosbeVocabProvider(new FileReaderResponseGetter()).getVocabItem(frenchWord, vocabCallback);
         assertEquals(vocabItems, vocabCallback.vocabItems);
     }
 
