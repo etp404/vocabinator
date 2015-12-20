@@ -2,6 +2,7 @@
 <manifest package="uk.co.mould.matt.vocabinator"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
