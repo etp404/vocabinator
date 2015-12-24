@@ -1,9 +1,9 @@
 package uk.co.mould.matt.vocabinator;
 
-import java.util.List;
+import java.util.Set;
 
 public interface VocabStorage {
     void store(VocabItem vocabItem);
 
-    List<VocabItem> getVocabItems();
+    Set<VocabItem> getVocabItems();
 }
