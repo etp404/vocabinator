@@ -7,10 +7,11 @@ import java.io.InputStreamReader;
 
 public class FileReaderResponseGetter implements ResponseGetter {
     @Override
-    public void getJsonForWord(ResponseGetterCallback responseGetterCallback) {
+    public void getJsonForWord(String wordToBeTranslated, ResponseGetterCallback responseGetterCallback) {
         try {
             String response = "";
-            InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("sample_response.json");
+            String sampleFileName = String.format("sample_response_%s.json", wordToBeTranslated);
+            InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(sampleFileName);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resourceAsStream));
             String tmp;
             while ((tmp = bufferedReader.readLine()) != null) {

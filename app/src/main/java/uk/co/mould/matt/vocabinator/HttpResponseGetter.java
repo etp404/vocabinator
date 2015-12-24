@@ -10,7 +10,7 @@ import java.net.URL;
 
 class HttpResponseGetter implements ResponseGetter {
     @Override
-    public void getJsonForWord(final ResponseGetterCallback responseGetterCallback) {
+    public void getJsonForWord(final String wordToBeTranslated, final ResponseGetterCallback responseGetterCallback) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -18,7 +18,7 @@ class HttpResponseGetter implements ResponseGetter {
 
                 URL url = null;
                 try {
-                    url = new URL("https://glosbe.com/gapi/translate?from=fra&dest=eng&format=json&phrase=ainsi");
+                    url = new URL(String.format("https://glosbe.com/gapi/translate?from=fra&dest=eng&format=json&phrase=%s", wordToBeTranslated));
                     String line;
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");

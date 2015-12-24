@@ -14,7 +14,7 @@ public class GlosbeVocabProvider implements VocabProvider {
 
     @Override
     public void getVocabItem(final String wordToBeTranslated, final VocabCallback vocabCallback) {
-        responseGetter.getJsonForWord(new ResponseGetter.ResponseGetterCallback() {
+        responseGetter.getJsonForWord(wordToBeTranslated, new ResponseGetter.ResponseGetterCallback() {
             @Override
             public void success(String result) {
                 Gson gson = new Gson();

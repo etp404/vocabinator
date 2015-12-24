@@ -6,3 +6,4 @@ I'm backing it with this API: https://glosbe.com/a-api.
 
 Todo list
 In core I have some JSON files for tests. The only way I could get tests to find them was to put them in production resources. I'm fairly sure there's a solution to this, but wanted to move on for now.
+HttpResponseGetter - this actually contains the api url. Maybe should take URL and the only bit that wouldn't be tested with be the network call.
