@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class AndroidEnterNewVocabItem extends LinearLayout implements EnterNewVocabView {
 
@@ -21,12 +22,12 @@ public class AndroidEnterNewVocabItem extends LinearLayout implements EnterNewVo
 
     @Override
     public String getEnglishWord() {
-        return null;
+        return ((TextView)findViewById(R.id.english_word)).getText().toString();
     }
 
     @Override
     public String getFrenchWord() {
-        return null;
+        return ((TextView)findViewById(R.id.french_word)).getText().toString();
     }
 
     @Override
