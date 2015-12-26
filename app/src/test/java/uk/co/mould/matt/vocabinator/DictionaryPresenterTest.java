@@ -2,15 +2,13 @@ package uk.co.mould.matt.vocabinator;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class AndroidDictionaryPresenterTest {
+public class DictionaryPresenterTest {
 
     @Test
     public void AndroidDictionaryPresenterTellsViewToShowDictionaryItems() {
@@ -19,22 +17,17 @@ public class AndroidDictionaryPresenterTest {
         }};
         FakeVocabStorage fakeVocabStorage = new FakeVocabStorage(vocabItems);
         CapturingDictionaryView capturingDictionaryView = new CapturingDictionaryView();
-        new AndroidDictionaryPresenter(capturingDictionaryView, fakeVocabStorage);
+        new DictionaryPresenter(capturingDictionaryView, fakeVocabStorage);
 
         assertThat(capturingDictionaryView.hasBeenToldToShow, is(vocabItems));
     }
 
-    private class CapturingDictionaryView {
+    private class CapturingDictionaryView implements DictionaryView {
         public Set<VocabItem> hasBeenToldToShow;
 
+        @Override
         public void show(Set<VocabItem> vocabItems) {
             hasBeenToldToShow = vocabItems;
-        }
-    }
-
-    private class AndroidDictionaryPresenter {
-        public AndroidDictionaryPresenter(CapturingDictionaryView capturingDictionaryView, VocabStorage fakeVocabStorage) {
-            capturingDictionaryView.show(fakeVocabStorage.getVocabItems());
         }
     }
 
