@@ -2,6 +2,8 @@ package uk.co.mould.matt.vocabinator;
 
 import org.junit.Test;
 
+import java.util.Set;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -27,6 +29,11 @@ public class EnterVocabPresenterTest {
         @Override
         public void store(VocabItem vocabItem) {
             hasBeenToldToStore = vocabItem;
+        }
+
+        @Override
+        public Set<VocabItem> getVocabItems() {
+            return null;
         }
     }
 
