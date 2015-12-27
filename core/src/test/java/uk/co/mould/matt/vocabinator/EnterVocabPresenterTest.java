@@ -2,6 +2,7 @@ package uk.co.mould.matt.vocabinator;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Set;
 
 import uk.co.mould.matt.vocabinator.entry.EnterNewVocabPresenter;
@@ -35,7 +36,7 @@ public class EnterVocabPresenterTest {
         }
 
         @Override
-        public Set<VocabItem> getVocabItems() {
+        public List<VocabItem> getVocabItems() {
             return null;
         }
     }
