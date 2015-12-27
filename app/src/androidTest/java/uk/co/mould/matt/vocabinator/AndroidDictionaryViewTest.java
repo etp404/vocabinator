@@ -7,6 +7,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.mould.matt.vocabinator.dictionary.AndroidDictionaryView;
+
 public class AndroidDictionaryViewTest extends AndroidTestCase {
     public void testThatVocabItemsCanBeShown() {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());

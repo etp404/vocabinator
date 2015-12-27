@@ -4,6 +4,8 @@ import android.test.AndroidTestCase;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
+import uk.co.mould.matt.vocabinator.entry.AndroidEnterNewVocabItemView;
+
 public class EnterNewVocabItemViewTest extends AndroidTestCase {
 
     private AndroidEnterNewVocabItemView enterNewVocabItemView;

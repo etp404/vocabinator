@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.entry;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import uk.co.mould.matt.vocabinator.QueryView;
+import uk.co.mould.matt.vocabinator.R;
+import uk.co.mould.matt.vocabinator.VocabItem;
 
 public class AndroidQueryView extends LinearLayout implements QueryView {
     private View queryButton;

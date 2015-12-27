@@ -1,10 +1,12 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.entry;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import uk.co.mould.matt.vocabinator.R;
 
 public class AndroidEnterNewVocabItemView extends LinearLayout implements uk.co.mould.matt.vocabinator.entry.EnterNewVocabView {
 

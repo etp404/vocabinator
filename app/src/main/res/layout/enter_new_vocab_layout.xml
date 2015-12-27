@@ -1,4 +1,4 @@
-<uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItemView
+<uk.co.mould.matt.vocabinator.entry.AndroidEnterNewVocabItemView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
@@ -65,4 +65,4 @@
 
         </FrameLayout>
     </FrameLayout>
-</uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItemView>
+</uk.co.mould.matt.vocabinator.entry.AndroidEnterNewVocabItemView>

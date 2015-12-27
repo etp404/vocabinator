@@ -9,6 +9,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.mould.matt.vocabinator.entry.AndroidQueryView;
+
 public final class QueryViewTest extends AndroidTestCase {
 
     private AndroidQueryView queryView;

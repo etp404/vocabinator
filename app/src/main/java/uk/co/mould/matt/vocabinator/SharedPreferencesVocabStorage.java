@@ -14,7 +14,6 @@ import java.util.Set;
 public class SharedPreferencesVocabStorage implements VocabStorage {
 
     private static final String VOCAB_STORAGE = "VOCAB_STORAGE";
-    private final List<VocabItem> internalList;
     private final SharedPreferences sharedPreferences;
     private String vocab_items_key = "vocab_items_key";
     private Gson gson;
@@ -23,7 +22,6 @@ public class SharedPreferencesVocabStorage implements VocabStorage {
     public SharedPreferencesVocabStorage(Context context) {
         gson = new Gson();
         sharedPreferences = context.getSharedPreferences(VOCAB_STORAGE, Context.MODE_PRIVATE);
-        internalList = new ArrayList<>();
     }
 
     @Override
@@ -31,12 +29,11 @@ public class SharedPreferencesVocabStorage implements VocabStorage {
         Set<String> vocabItems = sharedPreferences.getStringSet(vocab_items_key, new HashSet<String>());
         vocabItems.add(gson.toJson(vocabItem).toString());
         sharedPreferences.edit().putStringSet(vocab_items_key, vocabItems).apply();
-        internalList.add(vocabItem);
     }
 
     @Override
-    public Set<VocabItem> getVocabItems() {
-        Set<VocabItem> vocabItems = new HashSet<>();
+    public List<VocabItem> getVocabItems() {
+        List<VocabItem> vocabItems = new ArrayList<>();
         Set<String> vocabItemsAsString = sharedPreferences.getStringSet(vocab_items_key, new HashSet<String>());
         for (String vocabItemAsString : vocabItemsAsString) {
             vocabItems.add(gson.fromJson(vocabItemAsString, VocabItem.class));

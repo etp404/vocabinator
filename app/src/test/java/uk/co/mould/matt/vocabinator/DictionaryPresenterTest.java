@@ -2,8 +2,13 @@ package uk.co.mould.matt.vocabinator;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import uk.co.mould.matt.vocabinator.dictionary.DictionaryPresenter;
+import uk.co.mould.matt.vocabinator.dictionary.DictionaryView;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,7 +17,7 @@ public class DictionaryPresenterTest {
 
     @Test
     public void AndroidDictionaryPresenterTellsViewToShowDictionaryItems() {
-        Set<VocabItem> vocabItems = new HashSet<VocabItem>() {{
+        List<VocabItem> vocabItems = new ArrayList<VocabItem>() {{
             add(new VocabItem("a","b"));
         }};
         FakeVocabStorage fakeVocabStorage = new FakeVocabStorage(vocabItems);
@@ -23,18 +28,18 @@ public class DictionaryPresenterTest {
     }
 
     private class CapturingDictionaryView implements DictionaryView {
-        public Set<VocabItem> hasBeenToldToShow;
+        public List<VocabItem> hasBeenToldToShow;
 
         @Override
-        public void show(Set<VocabItem> vocabItems) {
+        public void show(List<VocabItem> vocabItems) {
             hasBeenToldToShow = vocabItems;
         }
     }
 
     private class FakeVocabStorage implements VocabStorage {
-        private Set<VocabItem> vocabItems;
+        private List<VocabItem> vocabItems;
 
-        public FakeVocabStorage(Set<VocabItem> vocabItems) {
+        public FakeVocabStorage(List<VocabItem> vocabItems) {
             this.vocabItems = vocabItems;
         }
 
@@ -44,7 +49,7 @@ public class DictionaryPresenterTest {
         }
 
         @Override
-        public Set<VocabItem> getVocabItems() {
+        public List<VocabItem> getVocabItems() {
             return vocabItems;
         }
     }

@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.dictionary;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,7 +14,10 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Set;
 
-class AndroidDictionaryView extends LinearLayout implements DictionaryView {
+import uk.co.mould.matt.vocabinator.R;
+import uk.co.mould.matt.vocabinator.VocabItem;
+
+public class AndroidDictionaryView extends LinearLayout implements DictionaryView {
     public AndroidDictionaryView(Context context) {
         super(context);
     }
@@ -25,11 +28,6 @@ class AndroidDictionaryView extends LinearLayout implements DictionaryView {
 
     public AndroidDictionaryView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    @Override
-    public void show(Set<VocabItem> vocabItems) {
-
     }
 
     public void show(List<VocabItem> vocabItems) {
@@ -59,14 +57,15 @@ class AndroidDictionaryView extends LinearLayout implements DictionaryView {
             return convertView;
         }
 
-        public static class VocabItemViewHolder {
-            public TextView englishWord;
-            public TextView frenchWord;
+    }
 
-            public VocabItemViewHolder(TextView englishWord, TextView frenchWord) {
-                this.englishWord = englishWord;
-                this.frenchWord = frenchWord;
-            }
+    public static class VocabItemViewHolder {
+        public TextView englishWord;
+        public TextView frenchWord;
+
+        public VocabItemViewHolder(TextView englishWord, TextView frenchWord) {
+            this.englishWord = englishWord;
+            this.frenchWord = frenchWord;
         }
     }
 }

@@ -3,6 +3,8 @@ package uk.co.mould.matt.vocabinator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import uk.co.mould.matt.vocabinator.entry.AndroidQueryView;
+
 public class QueryActivity extends AppCompatActivity {
 
     @Override

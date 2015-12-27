@@ -2,6 +2,7 @@ package uk.co.mould.matt.vocabinator;
 
 import android.test.AndroidTestCase;
 
+import java.util.List;
 import java.util.Set;
 
 public class SharedPreferencesVocabStorageTest extends AndroidTestCase {
@@ -14,7 +15,7 @@ public class SharedPreferencesVocabStorageTest extends AndroidTestCase {
         sharedPreferencesVocabStorage.store(vocabItem1);
         sharedPreferencesVocabStorage.store(vocabItem2);
         sharedPreferencesVocabStorage.clear();
-        Set<VocabItem> vocabItems = sharedPreferencesVocabStorage.getVocabItems();
+        List<VocabItem> vocabItems = sharedPreferencesVocabStorage.getVocabItems();
 
         assertEquals(vocabItems.size(), 0);
     }
@@ -26,7 +27,7 @@ public class SharedPreferencesVocabStorageTest extends AndroidTestCase {
 
         sharedPreferencesVocabStorage.store(vocabItem1);
         sharedPreferencesVocabStorage.store(vocabItem2);
-        Set<VocabItem> vocabItems = sharedPreferencesVocabStorage.getVocabItems();
+        List<VocabItem> vocabItems = sharedPreferencesVocabStorage.getVocabItems();
 
         assertTrue(vocabItems.contains(vocabItem1));
         assertTrue(vocabItems.contains(vocabItem2));

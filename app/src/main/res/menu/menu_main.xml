@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".entry.EnterNewVocabItemActivity">
+    <item   android:id="@+id/dicationary_view"
+            android:title="Dictionary"
+            android:orderInCategory="100"
+            android:icon="@android:drawable/ic_dialog_email"
+            app:showAsAction="ifRoom"/>
+</menu>
