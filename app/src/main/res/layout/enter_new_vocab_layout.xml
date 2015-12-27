@@ -1,9 +1,9 @@
-<uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItem
+<uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItemView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/android_query_view"
+    android:id="@+id/android_enter_new_vocab_item_view"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -65,4 +65,4 @@
 
         </FrameLayout>
     </FrameLayout>
-</uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItem>
+</uk.co.mould.matt.vocabinator.AndroidEnterNewVocabItemView>

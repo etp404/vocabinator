@@ -6,17 +6,17 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class AndroidEnterNewVocabItem extends LinearLayout implements EnterNewVocabView {
+public class AndroidEnterNewVocabItemView extends LinearLayout implements EnterNewVocabView {
 
-    public AndroidEnterNewVocabItem(Context context) {
+    public AndroidEnterNewVocabItemView(Context context) {
         super(context);
     }
 
-    public AndroidEnterNewVocabItem(Context context, AttributeSet attrs) {
+    public AndroidEnterNewVocabItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public AndroidEnterNewVocabItem(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AndroidEnterNewVocabItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

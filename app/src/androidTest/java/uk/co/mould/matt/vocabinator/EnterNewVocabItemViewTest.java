@@ -6,11 +6,11 @@ import android.widget.TextView;
 
 public class EnterNewVocabItemViewTest extends AndroidTestCase {
 
-    private AndroidEnterNewVocabItem enterNewVocabItemView;
+    private AndroidEnterNewVocabItemView enterNewVocabItemView;
 
     public void setUp() {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-        enterNewVocabItemView = (AndroidEnterNewVocabItem) layoutInflater.inflate(R.layout.enter_new_vocab_layout, null);
+        enterNewVocabItemView = (AndroidEnterNewVocabItemView) layoutInflater.inflate(R.layout.enter_new_vocab_layout, null);
     }
 
     public void testThatListenerIsInformedWhenStoreWordButtonIsPressed() {
