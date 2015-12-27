@@ -1,4 +1,7 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.entry;
+
+import uk.co.mould.matt.vocabinator.VocabItem;
+import uk.co.mould.matt.vocabinator.VocabStorage;
 
 public class EnterNewVocabPresenter {
 

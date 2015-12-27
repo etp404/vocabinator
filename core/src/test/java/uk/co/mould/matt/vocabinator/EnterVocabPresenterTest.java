@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import java.util.Set;
 
+import uk.co.mould.matt.vocabinator.entry.EnterNewVocabPresenter;
+import uk.co.mould.matt.vocabinator.entry.EnterNewVocabView;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -15,10 +18,10 @@ public class EnterVocabPresenterTest {
         String frenchWord = "bonjour";
 
         FakeVocabStorage fakeVocabStorage = new FakeVocabStorage();
-        FakeEnterNewVocabView enterNewVocabView = new FakeEnterNewVocabView(englishWord, frenchWord);
-        new EnterNewVocabPresenter(enterNewVocabView, fakeVocabStorage);
+        FakeEnterNewVocabView fakeEnterNewVocabView = new FakeEnterNewVocabView(englishWord, frenchWord);
+        new EnterNewVocabPresenter(fakeEnterNewVocabView, fakeVocabStorage);
 
-        enterNewVocabView.enterButtonPressed();
+        fakeEnterNewVocabView.enterButtonPressed();
 
         assertThat(fakeVocabStorage.hasBeenToldToStore, is(new VocabItem(englishWord, frenchWord)));
     }

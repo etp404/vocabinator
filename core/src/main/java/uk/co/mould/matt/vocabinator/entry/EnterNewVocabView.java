@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.entry;
 
 public interface EnterNewVocabView {
     String getEnglishWord();

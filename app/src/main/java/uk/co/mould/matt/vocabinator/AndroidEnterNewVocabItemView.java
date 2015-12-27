@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class AndroidEnterNewVocabItemView extends LinearLayout implements EnterNewVocabView {
+public class AndroidEnterNewVocabItemView extends LinearLayout implements uk.co.mould.matt.vocabinator.entry.EnterNewVocabView {
 
     public AndroidEnterNewVocabItemView(Context context) {
         super(context);

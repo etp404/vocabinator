@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.dictionaryapi;
 
 public interface ResponseGetter {
     void getJsonForWord(String wordToBeTranslated, ResponseGetterCallback responseGetterCallback);

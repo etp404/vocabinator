@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class FileReaderResponseGetter implements ResponseGetter {
+public class FileReaderResponseGetter implements uk.co.mould.matt.vocabinator.dictionaryapi.ResponseGetter {
     @Override
     public void getJsonForWord(String wordToBeTranslated, ResponseGetterCallback responseGetterCallback) {
         try {

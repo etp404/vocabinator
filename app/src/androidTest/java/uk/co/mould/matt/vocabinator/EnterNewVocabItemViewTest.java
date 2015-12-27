@@ -31,7 +31,7 @@ public class EnterNewVocabItemViewTest extends AndroidTestCase {
     }
 
 
-    private static class CapturingEnterButtonListener implements EnterNewVocabView.EnterButtonListener {
+    private static class CapturingEnterButtonListener implements uk.co.mould.matt.vocabinator.entry.EnterNewVocabView.EnterButtonListener {
         private boolean buttonPressed = false;
 
         @Override

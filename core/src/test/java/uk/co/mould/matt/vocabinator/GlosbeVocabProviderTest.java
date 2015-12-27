@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.mould.matt.vocabinator.dictionaryapi.VocabProvider;
+
 import static org.junit.Assert.assertEquals;
 
 public final class GlosbeVocabProviderTest {
@@ -23,7 +25,7 @@ public final class GlosbeVocabProviderTest {
             add(new VocabItem("thereby", frenchWord));
             add(new VocabItem("in this way", frenchWord));
         }};
-        new GlosbeVocabProvider(new FileReaderResponseGetter()).getVocabItem(frenchWord, vocabCallback);
+        new uk.co.mould.matt.vocabinator.dictionaryapi.GlosbeVocabProvider(new FileReaderResponseGetter()).getVocabItem(frenchWord, vocabCallback);
         assertEquals(vocabItems, vocabCallback.vocabItems);
     }
 

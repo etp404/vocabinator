@@ -1,9 +1,11 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.dictionaryapi;
 
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import uk.co.mould.matt.vocabinator.VocabItem;
 
 public class GlosbeVocabProvider implements VocabProvider {
     private ResponseGetter responseGetter;

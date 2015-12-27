@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-class HttpResponseGetter implements ResponseGetter {
+class HttpResponseGetter implements uk.co.mould.matt.vocabinator.dictionaryapi.ResponseGetter {
     @Override
     public void getJsonForWord(final String wordToBeTranslated, final ResponseGetterCallback responseGetterCallback) {
         Thread thread = new Thread(new Runnable() {

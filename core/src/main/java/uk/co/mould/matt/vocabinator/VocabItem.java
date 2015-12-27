@@ -1,6 +1,6 @@
 package uk.co.mould.matt.vocabinator;
 
-class VocabItem {
+public class VocabItem {
     public final String englishWord;
     public final String frenchWord;
 

@@ -9,7 +9,7 @@ public class QueryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.query_layout);
-        new QueryPagePresenter((AndroidQueryView)findViewById(R.id.android_query_view), new GlosbeVocabProvider(new HttpResponseGetter()));
+        new QueryPagePresenter((AndroidQueryView)findViewById(R.id.android_query_view), new uk.co.mould.matt.vocabinator.dictionaryapi.GlosbeVocabProvider(new HttpResponseGetter()));
     }
 
 }
