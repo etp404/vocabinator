@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <TextView
         android:id="@+id/french_word"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="french"
+        android:textSize="24dp"/>
     <TextView
         android:id="@+id/english_word"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:text="english"
+        android:layout_alignBaseline="@+id/french_word"
+        android:layout_alignBottom="@+id/french_word"
+        android:layout_alignParentEnd="true"
+        android:textSize="24dp"/>
+</RelativeLayout>
