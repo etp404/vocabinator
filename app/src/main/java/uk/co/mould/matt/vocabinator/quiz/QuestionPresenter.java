@@ -1,10 +1,12 @@
 package uk.co.mould.matt.vocabinator.quiz;
 
+import uk.co.mould.matt.vocabinator.Question;
+
 public class QuestionPresenter {
     private final QuestionView questionView;
     private final QuestionGenerator questionGenerator;
     private Score score = new Score();
-    private String questionWord;
+    private Question question;
 
     public QuestionPresenter(QuestionView questionView, QuestionGenerator questionGenerator, final AnswerChecking answerChecking) {
         this.questionView = questionView;
@@ -12,8 +14,8 @@ public class QuestionPresenter {
 
         questionView.addSubmitListener(new QuestionView.SubmitListener() {
             @Override
-            public void submitAnswer(String answer) {
-                answerChecking.check(questionWord, answer, new AnswerChecking.Callback() {
+            public void submitAnswer(String userAnswer) {
+                answerChecking.check(userAnswer, question.correctAnswer, new AnswerChecking.Callback() {
                     @Override
                     public void correct() {
                         score.addCorrect();
@@ -41,10 +43,10 @@ public class QuestionPresenter {
     public void showQuestion() {
         questionGenerator.getQuestion(new QuestionGenerator.Callback() {
             @Override
-            public void questionProvided(String questionWord) {
-                QuestionPresenter.this.questionWord = questionWord;
+            public void questionProvided(Question question) {
+                QuestionPresenter.this.question = question;
                 questionView.showScore(score);
-                questionView.setQuestion(questionWord);
+                questionView.setQuestion(question.questionWord);
             }
         });
     }

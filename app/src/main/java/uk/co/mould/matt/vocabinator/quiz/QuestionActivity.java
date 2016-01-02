@@ -12,10 +12,10 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question_layout);
 
         AndroidQuestionView questionView = (AndroidQuestionView) findViewById(R.id.android_question_view);
-        QuestionPresenter questionPresenter = new QuestionPresenter(questionView, new QuestionGenerator() {
+        new QuestionPresenter(questionView, new QuestionGenerator() {
             @Override
             public void getQuestion(Callback callback) {
-                callback.questionProvided("hello");
+                callback.questionProvided(null);
             }
         },
                 new AnswerChecking() {

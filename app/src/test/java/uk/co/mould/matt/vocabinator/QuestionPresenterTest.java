@@ -5,9 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 import uk.co.mould.matt.vocabinator.fakes.FakeQuestionView;
 import uk.co.mould.matt.vocabinator.quiz.AnswerChecking;
 import uk.co.mould.matt.vocabinator.quiz.QuestionGenerator;
@@ -23,20 +20,17 @@ public final class QuestionPresenterTest {
 	private final String correctAnswer = "correct answer";
     private final String wrongAnswer = "wrong answer";
 
-	private final String correctAnswerWithTrailingSpace = "correct answer ";
 	private FakeQuestionView questionView;
     private String questionWord = "question word";
+    private Question question = new Question(questionWord, correctAnswer);
 
     @Before
 	public void setup() {
 		questionView = new FakeQuestionView();
 
-        AnswerChecking answerChecker = new FakeAnswerChecker(
-                new HashMap<String, String>(){{
-                    put(questionWord, correctAnswer);
-                }});
+        AnswerChecking answerChecker = new FakeAnswerChecker();
 
-        QuestionGenerator fakeQuestionGenerator = new FakeQuestionGenerator(questionWord);
+        QuestionGenerator fakeQuestionGenerator = new FakeQuestionGenerator(question);
         new QuestionPresenter(
 				questionView,
                 fakeQuestionGenerator,
@@ -45,7 +39,7 @@ public final class QuestionPresenterTest {
 
 	@Test
 	public void testThatViewCanBeToldToShowAQuestion() {
-		assertEquals(questionView.setQuestionCalledWithQuestion, questionWord);
+        assertEquals(questionView.setQuestionCalledWithQuestion, question.questionWord);
         assertThat(questionView.updatedScore, is(new Score()));
     }
 
@@ -91,35 +85,28 @@ public final class QuestionPresenterTest {
     }
 
     public class FakeQuestionGenerator implements QuestionGenerator {
-        private String questionWord;
+        private Question question;
 
-        public FakeQuestionGenerator(String questionWord) {
-            this.questionWord = questionWord;
+        public FakeQuestionGenerator(Question question) {
+            this.question = question;
         }
 
         @Override
         public void getQuestion(Callback callback) {
-            callback.questionProvided(questionWord);
+            callback.questionProvided(question);
         }
 
     }
 
     public class FakeAnswerChecker implements AnswerChecking {
 
-        private Map<String, String> questionToAnswer;
-
-        public FakeAnswerChecker(Map<String, String> questionToAnswer) {
-            this.questionToAnswer = questionToAnswer;
-        }
-
         @Override
-        public void check(String questionWord, String answer, Callback callback) {
-            String rightAnswer = questionToAnswer.get(questionWord);
-            if (answer.equals(rightAnswer.toString())) {
+        public void check(String userAnswer, String correctAnswer, Callback callback) {
+            if (userAnswer.equals(correctAnswer)) {
                 callback.correct();
             }
             else {
-                callback.incorrect(rightAnswer);
+                callback.incorrect(correctAnswer);
             }
         }
     }
