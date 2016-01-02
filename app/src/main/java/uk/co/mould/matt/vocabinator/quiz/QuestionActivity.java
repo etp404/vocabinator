@@ -2,7 +2,6 @@ package uk.co.mould.matt.vocabinator.quiz;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import uk.co.mould.matt.vocabinator.R;
 
@@ -12,5 +11,18 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_layout);
 
+        AndroidQuestionView questionView = (AndroidQuestionView) findViewById(R.id.android_question_view);
+        QuestionPresenter questionPresenter = new QuestionPresenter(questionView, new QuestionGenerator() {
+            @Override
+            public void getQuestion(Callback callback) {
+                callback.questionProvided("hello");
+            }
+        },
+                new AnswerChecking() {
+                    @Override
+                    public void check(String questionWord, String answer, Callback callback) {
+                        callback.correct();
+                    }
+                });
     }
 }
