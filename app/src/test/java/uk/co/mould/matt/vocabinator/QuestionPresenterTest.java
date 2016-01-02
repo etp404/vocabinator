@@ -106,7 +106,7 @@ public final class QuestionPresenterTest {
                 callback.correct();
             }
             else {
-                callback.incorrect(correctAnswer);
+                callback.incorrect();
             }
         }
     }

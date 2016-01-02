@@ -3,8 +3,6 @@ package uk.co.mould.matt.vocabinator;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
-
 import uk.co.mould.matt.vocabinator.quiz.AnswerChecking;
 
 import static junit.framework.Assert.assertEquals;
@@ -31,12 +29,12 @@ public class AnswerCheckerTest {
     @Test
     public void testThatAnswerCheckerGivesCorrectIfReceivesIncorrectAnswer() {
         answerChecker.check(rightAnswer, "wrong answer", capturingCallback);
-        assertEquals(capturingCallback.incorrectCalledWith, rightAnswer);
+        assertTrue(capturingCallback.incorrectCalled);
     }
 
     private static class CapturingCallback implements AnswerChecking.Callback {
         public boolean correctCalled = false;
-        public String incorrectCalledWith;
+        public boolean incorrectCalled = false;
 
         @Override
         public void correct() {
@@ -44,8 +42,8 @@ public class AnswerCheckerTest {
         }
 
         @Override
-        public void incorrect(String correction) {
-            incorrectCalledWith = correction;
+        public void incorrect() {
+            incorrectCalled = true;
         }
     }
 
@@ -56,7 +54,7 @@ public class AnswerCheckerTest {
                 callback.correct();
             }
             else {
-                callback.incorrect(correctAnswer);
+                callback.incorrect();
             }
         }
     }

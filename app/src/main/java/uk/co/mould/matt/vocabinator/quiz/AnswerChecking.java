@@ -6,7 +6,6 @@ public interface AnswerChecking {
 
     interface Callback {
         void correct();
-
-        void incorrect(String corrrection);
+        void incorrect();
     }
 }

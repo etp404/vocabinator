@@ -23,7 +23,7 @@ public class QuestionPresenter {
                     }
 
                     @Override
-                    public void incorrect(String correction) {
+                    public void incorrect() {
                         score.addIncorrect();
                         QuestionPresenter.this.questionView.setResultToIncorrect(question.correctAnswer);
                     }
