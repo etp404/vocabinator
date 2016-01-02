@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.quiz;
 
 public class Score {
     int correct = 0;

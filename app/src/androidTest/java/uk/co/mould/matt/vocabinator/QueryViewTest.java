@@ -4,11 +4,8 @@ import android.content.Context;
 import android.test.AndroidTestCase;
 import android.view.LayoutInflater;
 import android.widget.EditText;
-import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import uk.co.mould.matt.vocabinator.dictionary.QueryView;
 import uk.co.mould.matt.vocabinator.entry.AndroidQueryView;
 
 public final class QueryViewTest extends AndroidTestCase {

@@ -1,7 +1,7 @@
 package uk.co.mould.matt.vocabinator.fakes;
 
-import uk.co.mould.matt.vocabinator.QuestionView;
-import uk.co.mould.matt.vocabinator.Score;
+import uk.co.mould.matt.vocabinator.quiz.QuestionView;
+import uk.co.mould.matt.vocabinator.quiz.Score;
 
 public class FakeQuestionView implements QuestionView {
 	public String setQuestionCalledWithQuestion;

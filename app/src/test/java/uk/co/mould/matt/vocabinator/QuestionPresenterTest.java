@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import uk.co.mould.matt.vocabinator.fakes.FakeQuestionView;
+import uk.co.mould.matt.vocabinator.quiz.AnswerChecking;
+import uk.co.mould.matt.vocabinator.quiz.QuestionGenerator;
+import uk.co.mould.matt.vocabinator.quiz.QuestionPresenter;
+import uk.co.mould.matt.vocabinator.quiz.Score;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;

@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.quiz;
 
 public class QuestionPresenter {
     private final QuestionView questionView;
@@ -39,7 +39,7 @@ public class QuestionPresenter {
     }
 
     public void showQuestion() {
-        questionGenerator.getQuestion(new Callback() {
+        questionGenerator.getQuestion(new QuestionGenerator.Callback() {
             @Override
             public void questionProvided(String questionWord) {
                 QuestionPresenter.this.questionWord = questionWord;

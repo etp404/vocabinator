@@ -1,4 +1,4 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.dictionary;
 
 import java.io.BufferedReader;
 import java.io.IOException;

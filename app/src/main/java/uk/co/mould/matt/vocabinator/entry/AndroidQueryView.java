@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import uk.co.mould.matt.vocabinator.QueryView;
+import uk.co.mould.matt.vocabinator.dictionary.QueryView;
 import uk.co.mould.matt.vocabinator.R;
 import uk.co.mould.matt.vocabinator.VocabItem;
 

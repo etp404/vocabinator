@@ -1,6 +1,8 @@
-package uk.co.mould.matt.vocabinator;
+package uk.co.mould.matt.vocabinator.dictionary;
 
 import java.util.List;
+
+import uk.co.mould.matt.vocabinator.VocabItem;
 
 public class QueryPagePresenter {
     public QueryPagePresenter(final QueryView queryView, final uk.co.mould.matt.vocabinator.dictionaryapi.VocabProvider vocabProvider) {

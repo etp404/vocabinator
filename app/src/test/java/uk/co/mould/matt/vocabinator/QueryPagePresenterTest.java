@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.mould.matt.vocabinator.dictionary.QueryPagePresenter;
+import uk.co.mould.matt.vocabinator.dictionary.QueryView;
 import uk.co.mould.matt.vocabinator.dictionaryapi.VocabProvider;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -26,7 +28,7 @@ public class QueryPagePresenterTest {
         fakeQueryView = new FakeQueryView();
         new
 
-        QueryPagePresenter(
+                QueryPagePresenter(
                 fakeQueryView,
                 automaticallyRespondingVocabProvider
                 );
