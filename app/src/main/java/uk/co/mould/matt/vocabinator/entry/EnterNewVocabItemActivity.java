@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import uk.co.mould.matt.vocabinator.R;
 import uk.co.mould.matt.vocabinator.SharedPreferencesVocabStorage;
 import uk.co.mould.matt.vocabinator.dictionary.DictionaryActivity;
+import uk.co.mould.matt.vocabinator.quiz.QuestionActivity;
 
 public class EnterNewVocabItemActivity extends AppCompatActivity {
     @Override
@@ -37,6 +38,9 @@ public class EnterNewVocabItemActivity extends AppCompatActivity {
 
         if (id == R.id.dicationary_view) {
             startActivity(new Intent(this, DictionaryActivity.class));
+        }
+        else if (id == R.id.quiz_view) {
+            startActivity(new Intent(this, QuestionActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

@@ -5,7 +5,11 @@
       tools:context=".entry.EnterNewVocabItemActivity">
     <item   android:id="@+id/dicationary_view"
             android:title="Dictionary"
-            android:orderInCategory="100"
             android:icon="@android:drawable/ic_dialog_email"
+            app:showAsAction="ifRoom"/>
+
+    <item   android:id="@+id/quiz_view"
+            android:title="Quiz"
+            android:icon="@android:drawable/ic_menu_help"
             app:showAsAction="ifRoom"/>
 </menu>
