@@ -5,11 +5,9 @@ import uk.co.mould.matt.vocabinator.quiz.Score;
 
 public class FakeQuestionView implements QuestionView {
 	public String setQuestionCalledWithQuestion;
-    public Boolean noTensesSelectedIsShown;
     public Score updatedScore;
 	public QuestionView.SubmitListener submitListener;
 	public boolean toldToShowThatAnswerWasCorrect;
-	public String correction;
 	public NextQuestionListener nextQuestionListener;
     public String toldToShowIncorrectWithCorrection;
 
@@ -27,11 +25,6 @@ public class FakeQuestionView implements QuestionView {
 	public void setResultToIncorrect(String correction) {
 		toldToShowIncorrectWithCorrection = correction;
 	}
-
-    @Override
-    public void showNoTensesSelected() {
-        noTensesSelectedIsShown = true;
-    }
 
     @Override
     public void showScore(Score score) {

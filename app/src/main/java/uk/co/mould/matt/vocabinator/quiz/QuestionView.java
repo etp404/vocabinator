@@ -7,8 +7,6 @@ public interface QuestionView {
 
 	void setResultToIncorrect(String correction);
 
-    void showNoTensesSelected();
-
     void showScore(Score score);
 
     void addSubmitListener(SubmitListener submitListener);
