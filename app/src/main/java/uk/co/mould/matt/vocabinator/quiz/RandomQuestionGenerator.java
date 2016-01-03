@@ -1,5 +1,7 @@
 package uk.co.mould.matt.vocabinator.quiz;
 
+import java.util.List;
+
 import uk.co.mould.matt.vocabinator.Question;
 import uk.co.mould.matt.vocabinator.RandomNumberGenerator;
 import uk.co.mould.matt.vocabinator.VocabItem;
@@ -16,7 +18,8 @@ public class RandomQuestionGenerator implements QuestionGenerator {
 
     @Override
     public void getQuestion(Callback callback) {
-        VocabItem vocabItem = vocabStorage.getVocabItems().get(randomNumberGenerator.randomNumber(0, 0));
+        List<VocabItem> vocabItems = vocabStorage.getVocabItems();
+        VocabItem vocabItem = vocabItems.get(randomNumberGenerator.randomNumber(0, vocabItems.size()));
         callback.questionProvided(new Question(vocabItem.englishWord, vocabItem.frenchWord));
     }
 }

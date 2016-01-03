@@ -13,28 +13,39 @@ import static org.junit.Assert.assertEquals;
 
 public class QuestionGeneratorTests {
 
-    private final VocabItem vocabItem1 = new VocabItem("a", "b");
-    private final VocabItem vocabItem2 = new VocabItem("c", "d");
-    private VocabStorage vocabStorage = new ListVocabStorage(
-            new ArrayList<VocabItem>(){{
-                add(vocabItem1);
-                add(vocabItem2);
-            }}
-    );
-    private final RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
-           new RandomNumberGeneratorReturnMin(),
-           vocabStorage);
+    private List<VocabItem> vocabItems = new ArrayList<VocabItem>() {{
+        add(new VocabItem("a", "b"));
+        add(new VocabItem("c", "d"));
+    }};
+
+    private VocabStorage vocabStorage = new ListVocabStorage(vocabItems);
     private CapturingCallback callback;
 
     @Before
     public void setUp() throws Exception {
         callback = new CapturingCallback();
+
     }
 
     @Test
-    public void generatesNewQuestionFromAvailableQuestions() {
+    public void generatesNewQuestionFromAvailableQuestionsWhenMinRandomValueSelected() {
+        RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
+                new RandomNumberGeneratorReturnMin(),
+                vocabStorage);
         randomQuestionGenerator.getQuestion(callback);
-        Question expectedQuestion = new Question(vocabItem1.englishWord, vocabItem1.frenchWord);
+        VocabItem vocabItem = vocabItems.get(0);
+        Question expectedQuestion = new Question(vocabItem.englishWord, vocabItem.frenchWord);
+        assertEquals(expectedQuestion, callback.question);
+    }
+
+    @Test
+    public void generatesNewQuestionFromAvailableQuestionsWhenMaxRandomValueSelected() {
+        RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
+                new RandomNumberGeneratorReturnMax(),
+                vocabStorage);
+        randomQuestionGenerator.getQuestion(callback);
+        VocabItem vocabItem = vocabItems.get(vocabItems.size() - 1);
+        Question expectedQuestion = new Question(vocabItem.englishWord, vocabItem.frenchWord);
         assertEquals(expectedQuestion, callback.question);
     }
 
@@ -42,6 +53,13 @@ public class QuestionGeneratorTests {
         @Override
         public int randomNumber(int fromInclusive, int toExclusive) {
             return fromInclusive;
+        }
+    }
+
+    private class RandomNumberGeneratorReturnMax implements RandomNumberGenerator {
+        @Override
+        public int randomNumber(int fromInclusive, int toExclusive) {
+            return toExclusive-1;
         }
     }
 
