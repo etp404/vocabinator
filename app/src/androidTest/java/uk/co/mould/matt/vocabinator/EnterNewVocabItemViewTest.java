@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import uk.co.mould.matt.vocabinator.entry.AndroidEnterNewVocabItemView;
+import uk.co.mould.matt.vocabinator.entry.EnterNewVocabView;
 
 public class EnterNewVocabItemViewTest extends AndroidTestCase {
 
     private AndroidEnterNewVocabItemView enterNewVocabItemView;
+    private final String englishWord = "englishWord";
+    private final String frenchWord = "frenchWord";
 
     public void setUp() {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
@@ -16,7 +19,7 @@ public class EnterNewVocabItemViewTest extends AndroidTestCase {
     }
 
     public void testThatListenerIsInformedWhenStoreWordButtonIsPressed() {
-       CapturingEnterButtonListener capturingEnterButtonListener = new CapturingEnterButtonListener();
+        CapturingEnterButtonListener capturingEnterButtonListener = new CapturingEnterButtonListener();
         enterNewVocabItemView.attachEnterButtonListener(capturingEnterButtonListener);
         enterNewVocabItemView.findViewById(R.id.enter_button).performClick();
 
@@ -24,16 +27,28 @@ public class EnterNewVocabItemViewTest extends AndroidTestCase {
     }
 
     public void testThatCanGetTheWordsFromTheBoxes() {
-        String englishWord = "englishWord";
-        String frenchWord = "frenchWord";
         ((TextView)enterNewVocabItemView.findViewById(R.id.english_word)).setText(englishWord);
         ((TextView)enterNewVocabItemView.findViewById(R.id.french_word)).setText(frenchWord);
         assertEquals(englishWord, enterNewVocabItemView.getEnglishWord());
         assertEquals(frenchWord, enterNewVocabItemView.getFrenchWord());
     }
 
+    public void testThatCanClearEnglishWordFromView(){
+        ((TextView)enterNewVocabItemView.findViewById(R.id.english_word)).setText(englishWord);
+        enterNewVocabItemView.clearEnglishWord();
+        TextView englishWordElement = (TextView) enterNewVocabItemView.findViewById(R.id.english_word);
+        assertEquals(0, englishWordElement.getText().length());
+    }
 
-    private static class CapturingEnterButtonListener implements uk.co.mould.matt.vocabinator.entry.EnterNewVocabView.EnterButtonListener {
+    public void testThatCanClearFrenchWordFromView(){
+        ((TextView)enterNewVocabItemView.findViewById(R.id.french_word)).setText(frenchWord);
+        enterNewVocabItemView.clearFrenchWord();
+        TextView frenchWordElement = (TextView) enterNewVocabItemView.findViewById(R.id.french_word);
+        assertEquals(0, frenchWordElement.getText().length());
+    }
+
+
+    private static class CapturingEnterButtonListener implements EnterNewVocabView.EnterButtonListener {
         private boolean buttonPressed = false;
 
         @Override

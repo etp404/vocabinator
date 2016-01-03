@@ -10,6 +10,9 @@ import uk.co.mould.matt.vocabinator.R;
 
 public class AndroidEnterNewVocabItemView extends LinearLayout implements uk.co.mould.matt.vocabinator.entry.EnterNewVocabView {
 
+    private TextView englishWordElement;
+    private TextView frenchWordElement;
+
     public AndroidEnterNewVocabItemView(Context context) {
         super(context);
     }
@@ -23,23 +26,30 @@ public class AndroidEnterNewVocabItemView extends LinearLayout implements uk.co.
     }
 
     @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        englishWordElement = (TextView) findViewById(R.id.english_word);
+        frenchWordElement = (TextView) findViewById(R.id.french_word);
+    }
+
+    @Override
     public String getEnglishWord() {
-        return ((TextView)findViewById(R.id.english_word)).getText().toString();
+        return englishWordElement.getText().toString();
     }
 
     @Override
     public String getFrenchWord() {
-        return ((TextView)findViewById(R.id.french_word)).getText().toString();
+        return frenchWordElement.getText().toString();
     }
 
     @Override
     public void clearEnglishWord() {
-
+        englishWordElement.setText("");
     }
 
     @Override
     public void clearFrenchWord() {
-
+        frenchWordElement.setText("");
     }
 
     @Override
