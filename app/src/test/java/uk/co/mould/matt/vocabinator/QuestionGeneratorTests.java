@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import uk.co.mould.matt.vocabinator.quiz.QuestionGenerator;
+import uk.co.mould.matt.vocabinator.quiz.RandomQuestionGenerator;
 
 import static org.junit.Assert.assertEquals;
 
@@ -40,22 +41,6 @@ public class QuestionGeneratorTests {
         @Override
         public int randomNumber(int from, int to) {
             return randomNumber;
-        }
-    }
-
-    private class RandomQuestionGenerator implements QuestionGenerator {
-        private final RandomNumberGenerator randomNumberGenerator;
-        private final VocabStorage vocabStorage;
-
-        public RandomQuestionGenerator(RandomNumberGenerator randomNumberGenerator, VocabStorage vocabStorage) {
-            this.randomNumberGenerator = randomNumberGenerator;
-            this.vocabStorage = vocabStorage;
-        }
-
-        @Override
-        public void getQuestion(Callback callback) {
-            VocabItem vocabItem = vocabStorage.getVocabItems().get(randomNumberGenerator.randomNumber(0, 0));
-            callback.questionProvided(new Question(vocabItem.englishWord, vocabItem.frenchWord));
         }
     }
 
