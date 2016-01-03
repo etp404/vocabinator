@@ -33,6 +33,16 @@ public class AndroidEnterNewVocabItemView extends LinearLayout implements uk.co.
     }
 
     @Override
+    public void clearEnglishWord() {
+
+    }
+
+    @Override
+    public void clearFrenchWord() {
+
+    }
+
+    @Override
     public void attachEnterButtonListener(final EnterButtonListener enterButtonListener) {
         findViewById(R.id.enter_button).setOnClickListener(new OnClickListener() {
             @Override

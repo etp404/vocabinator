@@ -11,6 +11,8 @@ public class EnterNewVocabPresenter {
             public void pressed() {
                 VocabItem vocabItem = new VocabItem(enterNewVocabView.getEnglishWord(), enterNewVocabView.getFrenchWord());
                 vocabStorage.store(vocabItem);
+                enterNewVocabView.clearEnglishWord();
+                enterNewVocabView.clearFrenchWord();
             }
         });
     }

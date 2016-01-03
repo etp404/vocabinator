@@ -1,5 +1,6 @@
 package uk.co.mould.matt.vocabinator;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -10,21 +11,33 @@ import uk.co.mould.matt.vocabinator.entry.EnterNewVocabView;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class EnterVocabPresenterTest {
 
-    @Test
-    public void whenEnterButtonIsPressed_VocabIsStored() {
-        String englishWord = "hello";
-        String frenchWord = "bonjour";
+    private FakeEnterNewVocabView fakeEnterNewVocabView;
+    private FakeVocabStorage fakeVocabStorage;
+    private String englishWord = "hello";
+    private String frenchWord = "bonjour";
 
-        FakeVocabStorage fakeVocabStorage = new FakeVocabStorage();
-        FakeEnterNewVocabView fakeEnterNewVocabView = new FakeEnterNewVocabView(englishWord, frenchWord);
+    @Before
+    public void setup() {
+        fakeVocabStorage = new FakeVocabStorage();
+        fakeEnterNewVocabView = new FakeEnterNewVocabView(englishWord, frenchWord);
         new EnterNewVocabPresenter(fakeEnterNewVocabView, fakeVocabStorage);
 
         fakeEnterNewVocabView.enterButtonPressed();
+    }
 
+    @Test
+    public void whenEnterButtonIsPressed_VocabIsStored() {
         assertThat(fakeVocabStorage.hasBeenToldToStore, is(new VocabItem(englishWord, frenchWord)));
+    }
+
+    @Test
+    public void whenEnterButtonIsPressed_EntryBoxesAreCleared() {
+        assertTrue(fakeEnterNewVocabView.englishWordCleared);
+        assertTrue(fakeEnterNewVocabView.frenchWordCleared);
     }
 
     private class FakeVocabStorage implements VocabStorage {
@@ -45,6 +58,8 @@ public class EnterVocabPresenterTest {
         private final String englishWord;
         private final String frenchWord;
         private EnterButtonListener enterButtonListener;
+        public boolean englishWordCleared = false;
+        public boolean frenchWordCleared;
 
         public FakeEnterNewVocabView(String englishWord, String frenchWord) {
             this.englishWord = englishWord;
@@ -63,6 +78,16 @@ public class EnterVocabPresenterTest {
         @Override
         public String getFrenchWord() {
             return frenchWord;
+        }
+
+        @Override
+        public void clearEnglishWord() {
+            englishWordCleared = true;
+        }
+
+        @Override
+        public void clearFrenchWord() {
+            frenchWordCleared = true;
         }
 
         @Override

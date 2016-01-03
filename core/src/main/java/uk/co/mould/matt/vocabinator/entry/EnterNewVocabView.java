@@ -4,6 +4,10 @@ public interface EnterNewVocabView {
     String getEnglishWord();
     String getFrenchWord();
 
+    void clearEnglishWord();
+
+    void clearFrenchWord();
+
 
     interface EnterButtonListener {
         void pressed();
