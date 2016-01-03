@@ -3,6 +3,7 @@ package uk.co.mould.matt.vocabinator;
 import org.junit.Before;
 import org.junit.Test;
 
+import uk.co.mould.matt.vocabinator.quiz.AnswerChecker;
 import uk.co.mould.matt.vocabinator.quiz.AnswerChecking;
 
 import static junit.framework.Assert.assertEquals;
@@ -47,15 +48,4 @@ public class AnswerCheckerTest {
         }
     }
 
-    private class AnswerChecker implements AnswerChecking {
-        @Override
-        public void check(String correctAnswer, String userAnswer, Callback callback) {
-            if (correctAnswer.equals(userAnswer)) {
-                callback.correct();
-            }
-            else {
-                callback.incorrect();
-            }
-        }
-    }
 }

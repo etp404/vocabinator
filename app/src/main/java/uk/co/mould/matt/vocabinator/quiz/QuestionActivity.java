@@ -18,11 +18,6 @@ public class QuestionActivity extends AppCompatActivity {
                 callback.questionProvided(null);
             }
         },
-                new AnswerChecking() {
-                    @Override
-                    public void check(String questionWord, String answer, Callback callback) {
-                        callback.correct();
-                    }
-                });
+                new AnswerChecker());
     }
 }
