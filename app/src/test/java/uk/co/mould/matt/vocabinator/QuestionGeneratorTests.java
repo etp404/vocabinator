@@ -14,8 +14,12 @@ public class QuestionGeneratorTests {
     @Test
     public void generatesNewQuestionFromAvailableQuestions() {
         VocabItem vocabItem = new VocabItem("a", "b");
-        RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(new FakeRandomNumberGenerator(0),
-                Collections.singletonList(vocabItem));
+        VocabStorage vocabStorage = new ListVocabStorage(Collections.singletonList(vocabItem));
+
+        RandomQuestionGenerator randomQuestionGenerator =
+                new RandomQuestionGenerator(
+                        new FakeRandomNumberGenerator(0),
+                        vocabStorage);
 
         CapturingCallback callback = new CapturingCallback();
         randomQuestionGenerator.getQuestion(callback);
@@ -41,17 +45,35 @@ public class QuestionGeneratorTests {
 
     private class RandomQuestionGenerator implements QuestionGenerator {
         private final RandomNumberGenerator randomNumberGenerator;
-        private final List<VocabItem> vocabItems;
+        private final VocabStorage vocabStorage;
 
-        public RandomQuestionGenerator(RandomNumberGenerator randomNumberGenerator, List<VocabItem> vocabItems) {
+        public RandomQuestionGenerator(RandomNumberGenerator randomNumberGenerator, VocabStorage vocabStorage) {
             this.randomNumberGenerator = randomNumberGenerator;
-            this.vocabItems = vocabItems;
+            this.vocabStorage = vocabStorage;
         }
 
         @Override
         public void getQuestion(Callback callback) {
-            VocabItem vocabItem = vocabItems.get(randomNumberGenerator.randomNumber(0, 0));
+            VocabItem vocabItem = vocabStorage.getVocabItems().get(randomNumberGenerator.randomNumber(0, 0));
             callback.questionProvided(new Question(vocabItem.englishWord, vocabItem.frenchWord));
+        }
+    }
+
+    private class ListVocabStorage implements VocabStorage {
+        private List<VocabItem> vocabItems;
+
+        public ListVocabStorage(List<VocabItem> vocabItems) {
+            this.vocabItems = vocabItems;
+        }
+
+        @Override
+        public void store(VocabItem vocabItem) {
+
+        }
+
+        @Override
+        public List<VocabItem> getVocabItems() {
+            return vocabItems;
         }
     }
 
