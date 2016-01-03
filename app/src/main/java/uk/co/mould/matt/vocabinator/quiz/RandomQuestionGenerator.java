@@ -11,7 +11,7 @@ public class RandomQuestionGenerator implements QuestionGenerator {
     private final RandomNumberGenerator randomNumberGenerator;
     private final VocabStorage vocabStorage;
 
-    public RandomQuestionGenerator(RandomNumberGenerator randomNumberGenerator, VocabStorage vocabStorage) {
+    public RandomQuestionGenerator(VocabStorage vocabStorage, RandomNumberGenerator randomNumberGenerator) {
         this.randomNumberGenerator = randomNumberGenerator;
         this.vocabStorage = vocabStorage;
     }

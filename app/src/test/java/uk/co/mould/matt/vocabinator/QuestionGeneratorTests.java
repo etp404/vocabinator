@@ -30,8 +30,8 @@ public class QuestionGeneratorTests {
     @Test
     public void generatesNewQuestionFromAvailableQuestionsWhenMinRandomValueSelected() {
         RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
-                new RandomNumberGeneratorReturnMin(),
-                vocabStorage);
+                vocabStorage, new RandomNumberGeneratorReturnMin()
+        );
         randomQuestionGenerator.getQuestion(callback);
         VocabItem vocabItem = vocabItems.get(0);
         Question expectedQuestion = new Question(vocabItem.englishWord, vocabItem.frenchWord);
@@ -41,8 +41,8 @@ public class QuestionGeneratorTests {
     @Test
     public void generatesNewQuestionFromAvailableQuestionsWhenMaxRandomValueSelected() {
         RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
-                new RandomNumberGeneratorReturnMax(),
-                vocabStorage);
+                vocabStorage, new RandomNumberGeneratorReturnMax()
+        );
         randomQuestionGenerator.getQuestion(callback);
         VocabItem vocabItem = vocabItems.get(vocabItems.size() - 1);
         Question expectedQuestion = new Question(vocabItem.englishWord, vocabItem.frenchWord);

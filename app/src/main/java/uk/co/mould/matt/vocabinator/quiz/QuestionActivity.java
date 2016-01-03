@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import uk.co.mould.matt.vocabinator.R;
+import uk.co.mould.matt.vocabinator.SharedPreferencesVocabStorage;
+import uk.co.mould.matt.vocabinator.SystemRandomNumberGenerator;
 
 public class QuestionActivity extends AppCompatActivity {
     @Override
@@ -12,12 +14,12 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question_layout);
 
         AndroidQuestionView questionView = (AndroidQuestionView) findViewById(R.id.android_question_view);
-        new QuestionPresenter(questionView, new QuestionGenerator() {
-            @Override
-            public void getQuestion(Callback callback) {
-                callback.questionProvided(null);
-            }
-        },
+        RandomQuestionGenerator questionGenerator = new RandomQuestionGenerator(
+                new SharedPreferencesVocabStorage(getApplicationContext()),
+                new SystemRandomNumberGenerator());
+        new QuestionPresenter(
+                questionView,
+                questionGenerator,
                 new AnswerChecker());
     }
 }
