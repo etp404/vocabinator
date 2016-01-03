@@ -1,8 +1,9 @@
 package uk.co.mould.matt.vocabinator;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import uk.co.mould.matt.vocabinator.quiz.QuestionGenerator;
@@ -12,35 +13,35 @@ import static org.junit.Assert.assertEquals;
 
 public class QuestionGeneratorTests {
 
+    private final VocabItem vocabItem1 = new VocabItem("a", "b");
+    private final VocabItem vocabItem2 = new VocabItem("c", "d");
+    private VocabStorage vocabStorage = new ListVocabStorage(
+            new ArrayList<VocabItem>(){{
+                add(vocabItem1);
+                add(vocabItem2);
+            }}
+    );
+    private final RandomQuestionGenerator randomQuestionGenerator = new RandomQuestionGenerator(
+           new RandomNumberGeneratorReturnMin(),
+           vocabStorage);
+    private CapturingCallback callback;
+
+    @Before
+    public void setUp() throws Exception {
+        callback = new CapturingCallback();
+    }
+
     @Test
     public void generatesNewQuestionFromAvailableQuestions() {
-        VocabItem vocabItem = new VocabItem("a", "b");
-        VocabStorage vocabStorage = new ListVocabStorage(Collections.singletonList(vocabItem));
-
-        RandomQuestionGenerator randomQuestionGenerator =
-                new RandomQuestionGenerator(
-                        new FakeRandomNumberGenerator(0),
-                        vocabStorage);
-
-        CapturingCallback callback = new CapturingCallback();
         randomQuestionGenerator.getQuestion(callback);
-
-        Question expectedQuestion = new Question(vocabItem.englishWord, vocabItem.frenchWord);
-
+        Question expectedQuestion = new Question(vocabItem1.englishWord, vocabItem1.frenchWord);
         assertEquals(expectedQuestion, callback.question);
     }
 
-    private class FakeRandomNumberGenerator implements RandomNumberGenerator {
-
-        private int randomNumber;
-
-        public FakeRandomNumberGenerator(int randomNumber) {
-            this.randomNumber = randomNumber;
-        }
-
+    private class RandomNumberGeneratorReturnMin implements RandomNumberGenerator {
         @Override
-        public int randomNumber(int from, int to) {
-            return randomNumber;
+        public int randomNumber(int fromInclusive, int toExclusive) {
+            return fromInclusive;
         }
     }
 
